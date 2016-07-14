@@ -2,6 +2,8 @@ package cn.telbox.web;
 
 import cn.telbox.login.Login;
 import io.swagger.annotations.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +16,8 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @RestController
 public class LoginController {
+    final static Logger logger = LoggerFactory.getLogger(LoginController.class);
+
     private final AtomicLong counter = new AtomicLong();
 
     @ApiOperation(value = "login", nickname = "login", notes = "user login end-point.", response = Login.class)
@@ -30,6 +34,8 @@ public class LoginController {
             @ApiResponse(code = 500, message = "Failure")})
     public Login greeting(@ApiParam(name = "loginId", value = "user's login id.", required = true) @RequestParam(value="loginId") String loginId,
                           @ApiParam(name = "password", value = "user's password.", required = true) @RequestParam(value="password") String password) {
+
+        logger.info("************************* Don't see my pwd!   loginId={}, password={}", loginId, password);
         return new Login(counter.incrementAndGet(), loginId, password);
     }
 }
