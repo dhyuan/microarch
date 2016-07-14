@@ -9,7 +9,7 @@
 	<packaging>pom</packaging>
 
 	<name>microarch</name>
-	<description>Demo project for Spring Boot</description>
+	<description>A project build on Spring Boot and Cloud.</description>
 
 	<modules>
 		<module>microarch-parent</module>
