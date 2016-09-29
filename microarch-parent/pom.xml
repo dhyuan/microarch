@@ -22,10 +22,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
 
-        <Lombok_Version>1.16.6</Lombok_Version>
-        <Junit_Version>3.8.1</Junit_Version>
-        <springfox-swagger-ui_Version>2.5.0</springfox-swagger-ui_Version>
-        <springfox-swagger2>2.5.0</springfox-swagger2>
+        <lombok.version>1.16.6</lombok.version>
+        <springfox-swagger-ui.version>2.5.0</springfox-swagger-ui.version>
+        <springfox-swagger2.version>2.5.0</springfox-swagger2.version>
+
+        <curator-recipes.version>2.7.0</curator-recipes.version>
     </properties>
 
     <dependencyManagement>
@@ -41,31 +42,48 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>${Lombok_Version}</version>
+                <version>${lombok.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${Junit_Version}</version>
-                <scope>test</scope>
-            </dependency>
 
             <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
-                <version>${springfox-swagger-ui_Version}</version>
+                <version>${springfox-swagger-ui.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
-                <version>${springfox-swagger2}</version>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>2.7.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>2.7.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>2.7.0</version>
             </dependency>
 
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
