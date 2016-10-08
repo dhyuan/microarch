@@ -6,6 +6,7 @@ import org.apache.curator.framework.recipes.leader.LeaderLatch;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 
 import java.io.IOException;
+import java.util.stream.Stream;
 
 /**
  * This service depends on the zookeeper environment.

@@ -20,6 +20,7 @@
 		<module>microarch-parent</module>
         <module>microarch-cloudsample</module>
 		<module>microarch-base</module>
+		<module>microarch-mongo</module>
 	</modules>
 
 </project>
