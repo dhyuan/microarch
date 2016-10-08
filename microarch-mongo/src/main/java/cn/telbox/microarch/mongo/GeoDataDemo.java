@@ -3,6 +3,7 @@ package cn.telbox.microarch.mongo;
 import cn.telbox.microarch.mongo.model.model.UserLocation;
 import com.google.common.collect.Lists;
 import com.mongodb.MongoClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +16,8 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.data.mongodb.core.geo.GeoJsonMultiPolygon;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.geo.GeoJsonPolygon;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -46,6 +49,7 @@ public class GeoDataDemo {
             userLocations.stream().forEach(System.out::println);
         };
     }
+
 
     public static void main(String[] args) {
         SpringApplication.run(GeoDataDemo.class, args);
@@ -98,5 +102,15 @@ public class GeoDataDemo {
         return userLocation;
     }
 
+}
 
+@RestController
+class UserLocationController {
+    @RequestMapping("userLocations")
+    public List<UserLocation> userLocations() {
+        return mongoTemplate.findAll(UserLocation.class);
+    }
+
+    @Autowired
+    MongoTemplate mongoTemplate;
 }
