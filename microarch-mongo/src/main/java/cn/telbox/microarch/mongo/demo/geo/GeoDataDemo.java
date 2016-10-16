@@ -1,4 +1,4 @@
-package cn.telbox.microarch.mongo;
+package cn.telbox.microarch.mongo.demo.geo;
 
 import cn.telbox.microarch.mongo.demo.geo.model.NixlePublicationDetail;
 import cn.telbox.microarch.mongo.demo.geo.model.UserLocation;
@@ -21,9 +21,13 @@ import org.springframework.data.mongodb.core.geo.GeoJsonModule;
 import org.springframework.data.mongodb.core.geo.GeoJsonMultiPolygon;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.geo.GeoJsonPolygon;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -56,8 +60,10 @@ public class GeoDataDemo {
             userLocations.stream().forEach(System.out::println);
 
 
+
             ObjectMapper mapper = new ObjectMapper();
             mapper.registerModule(new GeoJsonModule());
+            mapper.findAndRegisterModules();
 //            mapper.registerModule(geoJsonModule);
             mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             mapper.configure(JsonParser.Feature.IGNORE_UNDEFINED, true);
@@ -65,12 +71,84 @@ public class GeoDataDemo {
             mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
 
             NixlePublicationDetail nixlePublicationDetail = mapper.readValue(JSON, NixlePublicationDetail.class);
-            nixlePublicationDetail.computeGeometriesData();
-            System.out.println("-===>" + nixlePublicationDetail.computeGeometriesData());
+            nixlePublicationDetail.computeGeometriesData(null);
             System.out.println("-===>" + nixlePublicationDetail);
+//            mongoTemplate.save(nixlePublicationDetail);
+//
+//            prepareDirtData(mongoTemplate, nixlePublicationDetail);
+//            prepareData(mongoTemplate, nixlePublicationDetail);
 
-            mongoTemplate.save(nixlePublicationDetail);
+            queryByGeoIntersect(mongoTemplate, 10, false);
+            queryByGeoIntersect(mongoTemplate, 10, true);
+            queryByGeoIntersect(mongoTemplate, 20, false);
+            queryByGeoIntersect(mongoTemplate, 20, true);
+            queryByGeoIntersect(mongoTemplate, 50, false);
+            queryByGeoIntersect(mongoTemplate, 50, true);
+            queryByGeoIntersect(mongoTemplate, 500, false);
+            queryByGeoIntersect(mongoTemplate, 500, true);
+
+            queryByGeoWithin(mongoTemplate, 10, false);
+            queryByGeoWithin(mongoTemplate, 10, true);
+            queryByGeoWithin(mongoTemplate, 20, false);
+            queryByGeoWithin(mongoTemplate, 20, true);
+            queryByGeoWithin(mongoTemplate, 50, false);
+            queryByGeoWithin(mongoTemplate, 50, true);
+            queryByGeoWithin(mongoTemplate, 500, false);
+            queryByGeoWithin(mongoTemplate, 500, true);
+
+
+//            mongoTemplate.findAllAndRemove(new Query(), NixlePublicationDetail.class);
         };
+    }
+
+    private void prepareData(MongoTemplate mongoTemplate, NixlePublicationDetail nixlePublicationDetail) {
+        for (int i = 0; i < 5000; i ++) {
+            nixlePublicationDetail.computeGeometriesData(0.000001 * i);
+            mongoTemplate.save(nixlePublicationDetail);
+        }
+    }
+
+    private void prepareDirtData(MongoTemplate mongoTemplate, NixlePublicationDetail nixlePublicationDetail) {
+        for (int i = 0; i < 5000; i ++) {
+            nixlePublicationDetail.computeGeometriesData(2 + 0.000001 * i);
+            mongoTemplate.save(nixlePublicationDetail);
+        }
+    }
+
+    private void queryByGeoWithin(MongoTemplate mongoTemplate, int limitSize, Boolean isOnlyId) {
+        GeoJsonPolygon polygon = new GeoJsonPolygon(
+                new Point(-102.714554, 42.394023),
+                new Point(-99.714554, 42.394023),
+                new Point(-99.714548,40.394028),
+                new Point(-102.714537,40.394029),
+                new Point(-102.714554,42.394023));
+        Point point = new Point(-100.714346, 41.392926);
+        Criteria criteria = Criteria.where("points").within(polygon);
+        Query query = Query.query(criteria);
+        query.limit(limitSize);
+        if (isOnlyId) query.fields().include("headline");
+
+        long begTime = Instant.now().toEpochMilli();
+        List<NixlePublicationDetail> pubs = mongoTemplate.find(query, NixlePublicationDetail.class);
+        long endTime = Instant.now().toEpochMilli();
+        System.out.println("queryByGeoWithin limitSize=" + limitSize + "  oneField=:" + isOnlyId + "  ====>" + pubs.size() + "  used millionSeconds: " + (endTime - begTime));
+    }
+
+    private void queryByGeoIntersect(MongoTemplate mongoTemplate, int limitSize, Boolean isOnlyId) {
+        GeoJsonPolygon polygon = new GeoJsonPolygon(
+                new Point(-100.713954, 41.393523),
+                new Point(-100.714348,41.392928),
+                new Point(-100.714437,41.392929),
+                new Point(-100.713954,41.393523));
+        Criteria criteria = Criteria.where("geometries").intersects(polygon);
+        Query query = Query.query(criteria);
+        query.limit(limitSize);
+        if (isOnlyId) query.fields().include("headline");
+
+        long begTime = Instant.now().toEpochMilli();
+        List<NixlePublicationDetail> pubs = mongoTemplate.find(query, NixlePublicationDetail.class);
+        long endTime = Instant.now().toEpochMilli();
+        System.out.println("queryByGeoIntersect limitSize=" + limitSize + "  oneField=:" + isOnlyId + "  ====>" + pubs.size() + "  used millionSeconds: " + (endTime - begTime));
     }
 
 

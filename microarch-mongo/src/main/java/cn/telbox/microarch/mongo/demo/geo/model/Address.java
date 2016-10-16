@@ -1,4 +1,4 @@
-package cn.telbox.microarch.mongo.model;
+package cn.telbox.microarch.mongo.demo.geo.model;
 
 /**
  * Created by dahui on 10/1/16.
