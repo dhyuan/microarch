@@ -1,4 +1,4 @@
-package cn.telbox.microarch.mongo.model.model;
+package cn.telbox.microarch.mongo.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

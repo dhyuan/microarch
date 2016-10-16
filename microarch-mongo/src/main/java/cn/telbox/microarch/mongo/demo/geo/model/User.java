@@ -1,4 +1,4 @@
-package cn.telbox.microarch.mongo.model.model;
+package cn.telbox.microarch.mongo.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
