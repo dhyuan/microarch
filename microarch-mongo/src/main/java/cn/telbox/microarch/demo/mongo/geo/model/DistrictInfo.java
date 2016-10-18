@@ -1,4 +1,4 @@
-package cn.telbox.microarch.mongo.demo.geo.model;
+package cn.telbox.microarch.demo.mongo.geo.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.collect.Lists;
@@ -40,18 +40,28 @@ public class DistrictInfo {
     public List<CoordinateData> coordinateDatas;
 
 
-//    @JsonProperty("DistributionAreas")
-//    public List<GeoJson<?>> geometries;
-
-//    public GeoJson geoJson;
-
     public Integer statusCode;
     public String StatusText;
     public String headLineSms;
 
     public GeoJsonGeometryCollection geometries;
-
     public GeoJsonMultiPoint points;
+
+    public QGISFeatureCollectionData qgisFeatures = new QGISFeatureCollectionData();
+
+    public void setQgisFeatures() {
+        int i = 0;
+        for (CoordinateData cd: coordinateDatas) {
+            QGISFeatureData qgisFeatureData = new QGISFeatureData();
+            qgisFeatureData.type = "" + i;
+            qgisFeatureData.geometry.coordinates = cd.coordinatesJson;
+            qgisFeatureData.geometry.type = cd.type;
+
+            qgisFeatures.addFeature(qgisFeatureData);
+
+            i ++;
+        }
+    }
 
 //    @JsonGetter("geometries")
     public GeoJsonGeometryCollection computeGeometriesData(Double c) {

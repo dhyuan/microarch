@@ -1,4 +1,4 @@
-package cn.telbox.microarch.mongo.demo.geo.model;
+package cn.telbox.microarch.demo.mongo.geo.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

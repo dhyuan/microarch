@@ -1,7 +1,7 @@
-package cn.telbox.microarch.mongo.demo.geo;
+package cn.telbox.microarch.demo.mongo.geo;
 
-import cn.telbox.microarch.mongo.demo.geo.model.DistrictInfo;
-import cn.telbox.microarch.mongo.demo.geo.model.UserLocation;
+import cn.telbox.microarch.demo.mongo.geo.model.DistrictInfo;
+import cn.telbox.microarch.demo.mongo.geo.model.UserLocation;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -58,21 +58,12 @@ public class GeoDataDemo {
             List<UserLocation> userLocations = mongoTemplate.findAll(UserLocation.class);
             userLocations.stream().forEach(System.out::println);
 
-
-
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.registerModule(new GeoJsonModule());
-            mapper.findAndRegisterModules();
-//            mapper.registerModule(geoJsonModule);
-            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            mapper.configure(JsonParser.Feature.IGNORE_UNDEFINED, true);
-            mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
-            mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
-
-            DistrictInfo districtInfo = mapper.readValue(JSON, DistrictInfo.class);
+            JsonReader jsonReader = new JsonReader();
+            DistrictInfo districtInfo = jsonReader.read(JSON, DistrictInfo.class);
             districtInfo.computeGeometriesData(null);
+            districtInfo.setQgisFeatures();
             System.out.println("-===>" + districtInfo);
-//            mongoTemplate.save(districtInfo);
+            mongoTemplate.save(districtInfo);
 //
 //            prepareDirtData(mongoTemplate, districtInfo);
 //            prepareData(mongoTemplate, districtInfo);
