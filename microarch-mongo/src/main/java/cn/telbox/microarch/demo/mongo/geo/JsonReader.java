@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.mongodb.core.geo.GeoJsonModule;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -35,4 +36,12 @@ public class JsonReader {
         return null;
     }
 
+    public <T> T read(File file, Class<T> t) {
+        try {
+            return mapper.readValue(file, t);
+        } catch (IOException e) {
+            logger.warn("Can not convert to bean " + t, e);
+        }
+        return null;
+    }
 }

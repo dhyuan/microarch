@@ -26,6 +26,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
 import java.time.Instant;
 import java.util.List;
 
@@ -59,11 +60,17 @@ public class GeoDataDemo {
             userLocations.stream().forEach(System.out::println);
 
             JsonReader jsonReader = new JsonReader();
-            DistrictInfo districtInfo = jsonReader.read(JSON, DistrictInfo.class);
-            districtInfo.computeGeometriesData(null);
-            districtInfo.setQgisFeatures();
-            System.out.println("-===>" + districtInfo);
-            mongoTemplate.save(districtInfo);
+//            DistrictInfo districtInfo = jsonReader.read(JSON, DistrictInfo.class);
+//            districtInfo.computeGeometriesData(null);
+//            districtInfo.setQgisFeatures();
+//            System.out.println("-===>" + districtInfo);
+//            mongoTemplate.save(districtInfo);
+
+            DistrictInfo losAangeles = jsonReader.read(new File("/Users/dahui/Downloads/GeojsonData_LosAngeles.json"), DistrictInfo.class);
+            losAangeles.computeGeometriesData(null);
+            losAangeles.setQgisFeatures();
+            System.out.println("-===>" + losAangeles);
+            mongoTemplate.save(losAangeles);
 //
 //            prepareDirtData(mongoTemplate, districtInfo);
 //            prepareData(mongoTemplate, districtInfo);
