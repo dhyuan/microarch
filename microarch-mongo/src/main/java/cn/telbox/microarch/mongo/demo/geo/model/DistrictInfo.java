@@ -1,67 +1,36 @@
 package cn.telbox.microarch.mongo.demo.geo.model;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.collect.Lists;
-import org.apache.commons.collections.CollectionUtils;
 import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.geo.*;
 
 import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 /**
  * Created by Dahui on 2016/10/9.
  */
 //@JsonIgnoreProperties(ignoreUnknown = true)
-public class NixlePublicationDetail {
+public class DistrictInfo {
 
-//    @JsonProperty("AgencyInfoExtended.general.id")
-    @JsonProperty("AgencyInfoExtended")
-    public AgencyInfoExtended agencyInfo;             // id
+//    @JsonProperty("ManagerInfoExtended.general.id")
+    @JsonProperty("ManagerInfoExtended")
+    public ManagerInfoExtended agencyInfo;             // id
 
-    @JsonProperty("IncidentLocation")
-    public IncidentLocation location;
+    @JsonProperty("EventLocation")
+    public EventLocation location;
 
     @JsonProperty("Cap")
     public Cap cap;
-
-    @JsonProperty("PubMedia")
-    public PubMedia pubMedia;
+    
 
     @JsonProperty("status")
     public Status status;
 
-    public String headline;        // title
+    public String title;
 
-    public String text;            // body
+    public String description;
 
-    public String priority;        // priority:  Alert, Advisory, Community
-    public String lastModified;           // startDate created  ???
-    public String publishedTime;
-    public String expires;           // endDate ????, Maybe not provided in the V1.
-    public String eventType;               // eventType ==>priority:  Alert, Advisory, Community
-    public String action;                  // action   ???, Conducted from statusCode.
-    public String parentPubId;          // originalFeedId ????
-
-
-    public String apply_geographic_filtering; //": 0,  # if 0, do not apply geographic filtering to agency defined groups, otherwise do apply geographic filtering to agency defined groups
-    public String bc_accuracy;
-    public String bc_addr;
-    public String bc_addr_type;
-    public String bc_all_direct;
-    public String bc_city;
-    public String bc_cross_st;
-    public String bc_entered;
-    public String bc_geocoded;
-    public String bc_latitude;
-    public String bc_longitude;
-    public String bc_provider;
-    public String bc_radius;
-    public String bc_state;
-    public String bc_zipcode;
 
 
 //
@@ -143,7 +112,7 @@ public class NixlePublicationDetail {
     }
 
 
-    public static class AgencyInfoExtended {
+    public static class ManagerInfoExtended {
         @JsonProperty("general")
         public General general;
 
@@ -159,7 +128,7 @@ public class NixlePublicationDetail {
     }
 
 
-    public static class IncidentLocation {
+    public static class EventLocation {
         @JsonProperty("GeoLocation")
         public GeoLocation geoLocation;
 
@@ -187,10 +156,7 @@ public class NixlePublicationDetail {
         public String severity;
         public String urgency;
     }
-
-    public static class PubMedia {
-
-    }
+    
 
     public static class Status {
         public String status_code;
