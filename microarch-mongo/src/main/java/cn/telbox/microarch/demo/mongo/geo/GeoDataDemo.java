@@ -2,9 +2,6 @@ package cn.telbox.microarch.demo.mongo.geo;
 
 import cn.telbox.microarch.demo.mongo.geo.model.DistrictInfo;
 import cn.telbox.microarch.demo.mongo.geo.model.UserLocation;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import com.mongodb.MongoClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,18 +56,20 @@ public class GeoDataDemo {
             List<UserLocation> userLocations = mongoTemplate.findAll(UserLocation.class);
             userLocations.stream().forEach(System.out::println);
 
-            JsonReader jsonReader = new JsonReader();
-//            DistrictInfo districtInfo = jsonReader.read(JSON, DistrictInfo.class);
+            JsonParser jsonParser = new JsonParser();
+//            DistrictInfo districtInfo = jsonParser.read(JSON, DistrictInfo.class);
 //            districtInfo.computeGeometriesData(null);
 //            districtInfo.setQgisFeatures();
 //            System.out.println("-===>" + districtInfo);
 //            mongoTemplate.save(districtInfo);
 
-            DistrictInfo losAangeles = jsonReader.read(new File("/Users/dahui/Downloads/GeojsonData_LosAngeles.json"), DistrictInfo.class);
+            DistrictInfo losAangeles = jsonParser.read(new File("/Users/dahui/Downloads/GeojsonData_LosAngeles.json"), DistrictInfo.class);
             losAangeles.computeGeometriesData(null);
             losAangeles.setQgisFeatures();
             System.out.println("-===>" + losAangeles);
-            mongoTemplate.save(losAangeles);
+
+            jsonParser.write(new File("/Users/dahui/Downloads/LogAnge.json"), losAangeles.qgisFeatures);
+//            mongoTemplate.save(losAangeles);
 //
 //            prepareDirtData(mongoTemplate, districtInfo);
 //            prepareData(mongoTemplate, districtInfo);
