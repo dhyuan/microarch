@@ -18,11 +18,12 @@
 
 	<modules>
 		<module>microarch-parent</module>
-        <module>microarch-cloudsample</module>
 		<module>microarch-base</module>
 		<module>microarch-mongo</module>
-        <module>microarch-jettysample</module>
-        <module>microarch-springbootwithjetty</module>
-    </modules>
+		<module>microarch-sample-springcloud</module>
+		<module>microarch-sample-springbootwithjetty</module>
+        <module>microarch-sample-embeddedjetty</module>
+		<module>microarch-sample-springbootwithscala</module>
+	</modules>
 
 </project>
