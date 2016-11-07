@@ -22,11 +22,11 @@ public class SchedulerWorkInClusterDemo extends AbstractSingletonServiceBasedOnZ
     private final static Logger logger = LoggerFactory.getLogger(SchedulerWorkInClusterDemo.class);
 
 
-    @Value("${nixle.pubs.zookeeper.connection:127.0.0.1:2181}")
+    @Value("${zookeeper.connection:127.0.0.1:2181}")
     private String zookeeperConnectionString;
 
     // !!! This path may NOT the same as others !!!
-    @Value("${nixle.pubs.zookeeper.path.puller.leader.demo:/nixle/safetyawareness/pubPullerScheduler/leader/demo}")
+    @Value("${zookeeper.path.cluster.workA.leader:/telbox/cluster/work/A/leader}")
     private String pathOfPullerSchedulerLeader;
 
     public SchedulerWorkInClusterDemo() {}

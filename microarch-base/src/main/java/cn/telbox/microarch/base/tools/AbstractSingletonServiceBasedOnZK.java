@@ -60,9 +60,9 @@ public abstract class AbstractSingletonServiceBasedOnZK<T, R> implements Connect
             zookeeperClient = CuratorFrameworkFactory.newClient(zookeeperConnectionString(), retryPolicy);
             zookeeperClient.start();
 
-            logger.info("===== Nixle gateway try to connect to the zookeeper.  %s", zookeeperConnectionString());
+            logger.info("===== try to connect to the zookeeper.  %s", zookeeperConnectionString());
             zookeeperClient.blockUntilConnected(ZOOKEEPER_CONN_TIMEOUT, TimeUnit.SECONDS);
-            logger.info("===== Nixle gateway connected to the zookeeper.  %s", zookeeperConnectionString());
+            logger.info("===== connected to the zookeeper.  %s", zookeeperConnectionString());
 
         }catch (Exception e) {
             logger.error("Can NOT communication with the zookeeper well. %s", zookeeperConnectionString());
