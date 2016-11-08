@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
@@ -16,11 +17,10 @@ import java.util.function.Function;
 /**
  * Created by dahui on 07/11/2016.
  */
-@org.springframework.boot.autoconfigure.SpringBootApplication
+@SpringBootApplication
 @EnableScheduling
 public class SchedulerWorkInClusterDemo extends AbstractSingletonServiceBasedOnZK<Long, Integer> {
     private final static Logger logger = LoggerFactory.getLogger(SchedulerWorkInClusterDemo.class);
-
 
     @Value("${zookeeper.connection:127.0.0.1:2181}")
     private String zookeeperConnectionString;
@@ -33,7 +33,6 @@ public class SchedulerWorkInClusterDemo extends AbstractSingletonServiceBasedOnZ
 
     @PostConstruct
     private void postConstruct() {
-        System.out.println("postConstruct");
         logger.info("post constructor on subClass ....1");
         logger.info("post constructor on subClass ....2");
         logger.info("post constructor on subClass ....3");
@@ -46,7 +45,7 @@ public class SchedulerWorkInClusterDemo extends AbstractSingletonServiceBasedOnZ
         return Optional.of(0);
     };
 
-    @Scheduled(cron="*/5 * * * * ?")
+//    @Scheduled(cron="*/5 * * * * ?")
     void schedulerJob() {
         doSingletonWork(shedulerWorkFunction, 66L).ifPresent(System.out::println);
     }
@@ -69,10 +68,8 @@ public class SchedulerWorkInClusterDemo extends AbstractSingletonServiceBasedOnZ
         return zookeeperConnectionString;
     }
 
-    public static void main(String[] args) throws IOException {
-        SpringApplication.run(SchedulerWorkInClusterDemo.class, args);
-
-        System.out.println("====");
-        System.in.read();
-    }
+//    public static void main(String[] args) throws IOException {
+//        SpringApplication.run(SchedulerWorkInClusterDemo.class, args);
+////        System.in.read();
+//    }
 }
