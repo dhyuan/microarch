@@ -4,7 +4,7 @@
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/microarch-sample-embeddedjetty/target/classes/webapp/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/microarch-samples/microarch-sample-embeddedjetty/target/classes/webapp/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/microarch-sample-embeddedjetty/target/classes/webapp" relative="/" />
@@ -14,7 +14,7 @@
     <facet type="web" name="Web2">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/microarch-sample-embeddedjetty/src/main/resources/webapp/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/microarch-samples/microarch-sample-embeddedjetty/src/main/resources/webapp/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/microarch-sample-embeddedjetty/src/main/resources/webapp" relative="/" />

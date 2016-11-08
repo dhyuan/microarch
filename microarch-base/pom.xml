@@ -13,10 +13,6 @@
     <artifactId>microarch-base</artifactId>
 
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-web</artifactId>-->
-        <!--</dependency>-->
         <!-- zookeeper curator -->
         <dependency>
             <groupId>org.apache.curator</groupId>

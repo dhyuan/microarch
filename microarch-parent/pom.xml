@@ -27,6 +27,7 @@
         <spring-bean.version>4.3.3.RELEASE</spring-bean.version>
 
         <spring-boot-starter.version>1.4.1.RELEASE</spring-boot-starter.version>
+        <spring-boot-starter-test.version>1.4.1.RELEASE</spring-boot-starter-test.version>
         <spring-boot-start-web.version>1.4.1.RELEASE</spring-boot-start-web.version>
         <spring-boot-start-security.version>1.4.1.RELEASE</spring-boot-start-security.version>
 
@@ -79,6 +80,12 @@
                 <version>${spring-boot-start-security.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot-starter-test.version}</version>
+                <scope>test</scope>
+            </dependency>
 
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -141,51 +148,15 @@
                 <version>${scala.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <version>${spring-boot-starter}</version>
-                <scope>test</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
 
     <dependencies>
-
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-context</artifactId>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-beans</artifactId>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-logging</artifactId>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>ch.qos.logback</groupId>-->
-            <!--<artifactId>logback-classic</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.slf4j</groupId>-->
-            <!--<artifactId>slf4j-log4j12</artifactId>-->
-            <!--<version>1.7.21</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-logging</artifactId>-->
-            <!--<version>${spring-boot.version}</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>org.scala-lang</groupId>
@@ -196,18 +167,15 @@
             <artifactId>scala-library</artifactId>
         </dependency>
 
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-test</artifactId>
-            <version>1.4.1.RELEASE</version>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
 
     <build>
-
         <pluginManagement>
             <plugins>
                 <!-- Jetty plugin -->

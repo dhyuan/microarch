@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>microarch</name>
+	<name>MicroArch</name>
 	<description>A project build on Spring Boot and Cloud.</description>
 	<url>https://github.com/dhyuan/microarch</url>
 	<organization>
@@ -20,10 +20,7 @@
 		<module>microarch-parent</module>
 		<module>microarch-base</module>
 		<module>microarch-mongo</module>
-		<module>microarch-sample-springcloud</module>
-		<module>microarch-sample-springbootwithjetty</module>
-        <module>microarch-sample-embeddedjetty</module>
-		<module>microarch-sample-springbootwithscala</module>
-	</modules>
+		<module>microarch-samples</module>
+    </modules>
 
 </project>
