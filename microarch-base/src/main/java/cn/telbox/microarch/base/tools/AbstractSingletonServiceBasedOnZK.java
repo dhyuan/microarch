@@ -44,11 +44,11 @@ public abstract class AbstractSingletonServiceBasedOnZK<T, R> implements Connect
     protected Optional<R> doSingletonWork(Function<T, Optional<R>> work, T value) {
         if (isLeaderService()) {
             System.out.println("leader");
-            logger.info("I'm the leader. I do this work. %s", this.toString());
+            logger.info("I'm the leader. I do this work. {}", this.toString());
             return work.apply(value);
         }
 
-        logger.info("I'm NOT leader. I do nothing.  %s", this.toString());
+        logger.info("I'm NOT leader. I do nothing.  {}", this.toString());
         return Optional.empty();
     }
 
@@ -60,12 +60,12 @@ public abstract class AbstractSingletonServiceBasedOnZK<T, R> implements Connect
             zookeeperClient = CuratorFrameworkFactory.newClient(zookeeperConnectionString(), retryPolicy);
             zookeeperClient.start();
 
-            logger.info("===== try to connect to the zookeeper.  %s", zookeeperConnectionString());
+            logger.info("===== try to connect to the zookeeper.  {}", zookeeperConnectionString());
             zookeeperClient.blockUntilConnected(ZOOKEEPER_CONN_TIMEOUT, TimeUnit.SECONDS);
-            logger.info("===== connected to the zookeeper.  %s", zookeeperConnectionString());
+            logger.info("===== connected to the zookeeper.  {}", zookeeperConnectionString());
 
         }catch (Exception e) {
-            logger.error("Can NOT communication with the zookeeper well. %s", zookeeperConnectionString());
+            logger.error("Can NOT communication with the zookeeper well. {}", zookeeperConnectionString());
             e.printStackTrace();
             throw new RuntimeException("Can NOT communication with the zookeeper well. " + zookeeperConnectionString());
         }
@@ -95,7 +95,7 @@ public abstract class AbstractSingletonServiceBasedOnZK<T, R> implements Connect
             logger.error("Can not connect to the zookeeper.");
         }
         try {
-            leaderLatch.getParticipants().forEach(p -> logger.info("scheduler try to acquire the leadership.  zkClientId=%s", p.getId()));
+            leaderLatch.getParticipants().forEach(p -> logger.info("scheduler try to acquire the leadership.  zkClientId={}", p.getId()));
         } catch (Exception e) {
             logger.info("Can not lest the participants of the scheduler.");
         }
@@ -108,7 +108,7 @@ public abstract class AbstractSingletonServiceBasedOnZK<T, R> implements Connect
 
     @Override
     public void stateChanged(CuratorFramework client, ConnectionState newState) {
-        logger.warn("Zookeeper Client ConnectionStateListener:  clientState=%s   connectionState=%s", client.getState().name(), newState.name());
+        logger.warn("Zookeeper Client ConnectionStateListener:  clientState=%s   connectionState={}", client.getState().name(), newState.name());
     }
 
 

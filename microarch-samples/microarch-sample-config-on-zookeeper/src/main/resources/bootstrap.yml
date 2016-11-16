@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    zookeeper:
+      config:
+        enabled: true
+        root: microarch-configuration
+        defaultContext: defaultSetting
+        profileSeparator: '::'

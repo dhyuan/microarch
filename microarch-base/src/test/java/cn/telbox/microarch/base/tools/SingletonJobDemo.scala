@@ -1,5 +1,6 @@
 package cn.telbox.microarch.base.tools
 
+import org.slf4j.LoggerFactory
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.scheduling.annotation.{EnableScheduling, Scheduled}
@@ -11,11 +12,14 @@ import org.springframework.scheduling.annotation.{EnableScheduling, Scheduled}
 @SpringBootApplication
 @EnableScheduling
 class SingletonJobDemo extends TraitOfSingletonServiceBasedOnZK[String, Int] {
+  private val logger = LoggerFactory.getLogger(SingletonJobDemo.getClass)
 
   @Scheduled(cron = "*/5 * * * * ?")
   def singleJob() = {
     val work = (name: String) => {
-      printf("Hello, %s\n", name)
+      logger.info("Hello, {}\n", name)
+      logger.warn("Hello, {}\n", name)
+      logger.error("Hello, {}\n", name)
       0
     }
     doSingletonJob("127.0.0.1:2181", "/leader/demo", work)("Job 1")

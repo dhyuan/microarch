@@ -19,5 +19,6 @@
         <module>microarch-sample-springbootwithjetty</module>
         <module>microarch-sample-springbootwithscala</module>
         <module>microarch-sample-springcloud</module>
+        <module>microarch-sample-config-on-zookeeper</module>
     </modules>
 </project>

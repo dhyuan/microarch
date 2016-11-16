@@ -28,6 +28,11 @@
 
         <spring-boot-starter.version>1.4.1.RELEASE</spring-boot-starter.version>
         <spring-boot-starter-test.version>1.4.1.RELEASE</spring-boot-starter-test.version>
+
+        <spring-cloud-starter-zookeeper.version>1.0.2.RELEASE</spring-cloud-starter-zookeeper.version>
+        <spring-cloud-zookeeper-discovery.version>1.0.2.RELEASE</spring-cloud-zookeeper-discovery.version>
+        <spring-cloud-starter-zookeeper-config.version>1.0.2.RELEASE</spring-cloud-starter-zookeeper-config.version>
+
         <spring-boot-start-web.version>1.4.1.RELEASE</spring-boot-start-web.version>
         <spring-boot-start-security.version>1.4.1.RELEASE</spring-boot-start-security.version>
 
@@ -50,22 +55,38 @@
                 <scope>import</scope>
             </dependency>
 
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>4.3.3.RELEASE</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-context</artifactId>-->
+                <!--<version>4.3.3.RELEASE</version>-->
+            <!--</dependency>-->
 
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>4.3.3.RELEASE</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-beans</artifactId>-->
+                <!--<version>4.3.3.RELEASE</version>-->
+            <!--</dependency>-->
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
                 <version>${spring-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zookeeper</artifactId>
+                <version>${spring-cloud-starter-zookeeper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-zookeeper-discovery</artifactId>
+                <version>${spring-cloud-zookeeper-discovery.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zookeeper-config</artifactId>
+                <version>${spring-cloud-starter-zookeeper-config.version}</version>
             </dependency>
 
             <dependency>
@@ -156,6 +177,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
         <dependency>

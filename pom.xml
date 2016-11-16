@@ -21,6 +21,7 @@
 		<module>microarch-base</module>
 		<module>microarch-mongo</module>
 		<module>microarch-samples</module>
+        <module>microarch-config-mgr-zk</module>
     </modules>
 
 </project>

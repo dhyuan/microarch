@@ -15,7 +15,7 @@ import org.slf4j.{Logger, LoggerFactory}
   * Created by dahui on 08/11/2016.
   */
 trait TraitOfSingletonServiceBasedOnZK[T, R] {
-  val logger: Logger = LoggerFactory.getLogger("TraitOfSingletonServiceBasedOnZK")
+  private val logger: Logger = LoggerFactory.getLogger(TraitOfSingletonServiceBasedOnZK.getClass)
 
   private val ZOOKEEPER_CONN_TIMEOUT: Integer = 60
 
