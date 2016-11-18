@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: demo-ConfigOnZK-service
   cloud:
     zookeeper:
       config:

@@ -11,11 +11,11 @@
     <name>microarch-parent</name>
     <description>The parent project for micro-arch sub-projects.</description>
 
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.4.1.RELEASE</version>
-        <relativePath/>
     </parent>
 
     <properties>
@@ -23,18 +23,17 @@
         <java.version>1.8</java.version>
         <scala.version>2.12.0</scala.version>
 
-        <spring-context.version>4.3.3.RELEASE</spring-context.version>
-        <spring-bean.version>4.3.3.RELEASE</spring-bean.version>
-
         <spring-boot-starter.version>1.4.1.RELEASE</spring-boot-starter.version>
         <spring-boot-starter-test.version>1.4.1.RELEASE</spring-boot-starter-test.version>
+        <spring-boot-start-web.version>1.4.1.RELEASE</spring-boot-start-web.version>
+        <spring-boot-start-security.version>1.4.1.RELEASE</spring-boot-start-security.version>
+
+        <spring-cloud-starter-config.version>1.1.2.RELEASE</spring-cloud-starter-config.version>
 
         <spring-cloud-starter-zookeeper.version>1.0.2.RELEASE</spring-cloud-starter-zookeeper.version>
         <spring-cloud-zookeeper-discovery.version>1.0.2.RELEASE</spring-cloud-zookeeper-discovery.version>
         <spring-cloud-starter-zookeeper-config.version>1.0.2.RELEASE</spring-cloud-starter-zookeeper-config.version>
 
-        <spring-boot-start-web.version>1.4.1.RELEASE</spring-boot-start-web.version>
-        <spring-boot-start-security.version>1.4.1.RELEASE</spring-boot-start-security.version>
 
         <logback-classic.version>1.1.7</logback-classic.version>
         <lombok.version>1.16.6</lombok.version>
@@ -45,15 +44,18 @@
 
     </properties>
 
+
+
+
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Brixton.SR2</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.cloud</groupId>-->
+                <!--<artifactId>spring-cloud-dependencies</artifactId>-->
+                <!--<version>Brixton.SR2</version>-->
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            <!--</dependency>-->
 
             <!--<dependency>-->
                 <!--<groupId>org.springframework</groupId>-->
@@ -71,6 +73,23 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
                 <version>${spring-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${spring-cloud-starter-config.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-dependencies</artifactId>
+                <version>${spring-cloud-starter-config.version}</version>
             </dependency>
 
             <dependency>
@@ -177,6 +196,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
 
         <dependency>
