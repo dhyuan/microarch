@@ -52,7 +52,7 @@ public class ConfigOnZKApplication {
 @RestController
 class ConfigDataController {
 
-    @Value("${message}")
+    @Value("${message:NoMessageFound}")
     private String message;
 
     @RequestMapping(value = "/hi", method = RequestMethod.GET)

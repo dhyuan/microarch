@@ -1,0 +1,8 @@
+/microarch-configuration/demo-ConfigOnZK-service#DEV=message=hello dev
+/microarch-configuration/demo-ConfigOnZK-service#TEST=message=hello test
+/microarch-configuration/demo-ConfigOnZK-service#INTG=message=hello intg
+/microarch-configuration/demo-ConfigOnZK-service#PROD=message=hello prod
+/microarch-configuration/demo-ConfigOnZK-service=message=hello app
+/microarch-configuration/defaultSetting#DEV=message=hello default dev
+/microarch-configuration/defaultSetting#TEST=message=hello defult test
+/microarch-configuration/defaultSetting=message=hello default
