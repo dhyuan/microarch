@@ -32,7 +32,8 @@ import java.time.Instant;
  * 3) Open through browser.
  * 4) Change the message's value and refresh the web page, you can find the changes is reflected on the page.
  * 5) Use the actuator to refresh:  curl -d {} http://localhost:8080/refresh
- *
+ * 6) The config data can be accessed by https://github.com/DeemOpen/zkui.
+ * 
  * Created by Dahui on 2016/11/18.
  */
 @SpringBootApplication
