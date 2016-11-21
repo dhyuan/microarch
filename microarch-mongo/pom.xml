@@ -12,6 +12,10 @@
 
     <artifactId>microarch-mongo</artifactId>
 
+    <properties>
+        <start-class>cn.telbox.microarch.demo.mongo.geo.GeoDataDemo</start-class>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>cn.telbox</groupId>

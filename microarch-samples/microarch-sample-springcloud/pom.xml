@@ -9,8 +9,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-
     <artifactId>microarch-sample-springcloud</artifactId>
+
+    <properties>
+        <start-class>cn.telbox.microarch.sample.</start-class>
+    </properties>
 
     <dependencies>
         <dependency>

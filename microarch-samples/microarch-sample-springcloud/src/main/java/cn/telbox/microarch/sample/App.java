@@ -1,4 +1,4 @@
-package cn.telbox;
+package cn.telbox.microarch.sample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

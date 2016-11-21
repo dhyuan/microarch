@@ -1,6 +1,6 @@
-package cn.telbox.web;
+package cn.telbox.microarch.sample.web;
 
-import cn.telbox.login.Login;
+import cn.telbox.microarch.sample.login.Login;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +36,7 @@ public class LoginController {
                           @ApiParam(name = "password", value = "user's password.", required = true) @RequestParam(value="password") String password) {
 
         logger.info("************************* Don't see my pwd!   loginId={}, password={}", loginId, password);
-        return new Login(counter.incrementAndGet(), loginId, password);
+        return new Login();
+//        return new Login(Long.valueOf(counter.incrementAndGet()), loginId, password);
     }
 }

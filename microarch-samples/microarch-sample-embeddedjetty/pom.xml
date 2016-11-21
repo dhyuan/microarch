@@ -13,7 +13,12 @@
     <artifactId>microarch-sample-embeddedjetty</artifactId>
 
 
+    <properties>
+        <start-class>cn.telbox.microarch.sample.embeddedjetty.EmbeddedJettyServerWithWebContext</start-class>
+    </properties>
+
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
@@ -25,17 +30,17 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>org.eclipse.jetty</groupId>-->
-            <!--<artifactId>jetty-server</artifactId>-->
+        <!--<groupId>org.eclipse.jetty</groupId>-->
+        <!--<artifactId>jetty-server</artifactId>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>org.eclipse.jetty</groupId>-->
-            <!--<artifactId>jetty-jmx</artifactId>-->
+        <!--<groupId>org.eclipse.jetty</groupId>-->
+        <!--<artifactId>jetty-jmx</artifactId>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>org.eclipse.jetty</groupId>-->
-            <!--<artifactId>jetty-io</artifactId>-->
+        <!--<groupId>org.eclipse.jetty</groupId>-->
+        <!--<artifactId>jetty-io</artifactId>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -43,15 +48,15 @@
             <version>9.2.14.v20151106</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.eclipse.jetty</groupId>-->
-            <!--<artifactId>jetty-webapp</artifactId>-->
-            <!--<version>9.2.14.v20151106</version>-->
+        <!--<groupId>org.eclipse.jetty</groupId>-->
+        <!--<artifactId>jetty-webapp</artifactId>-->
+        <!--<version>9.2.14.v20151106</version>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>org.eclipse.jetty</groupId>-->
-            <!--<artifactId>jetty-servlet</artifactId>-->
-            <!--<version>9.2.14.v20151106</version>-->
+        <!--<groupId>org.eclipse.jetty</groupId>-->
+        <!--<artifactId>jetty-servlet</artifactId>-->
+        <!--<version>9.2.14.v20151106</version>-->
         <!--</dependency>-->
 
 

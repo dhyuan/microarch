@@ -13,6 +13,10 @@
 
     <artifactId>microarch-sample-springbootwithscala</artifactId>
 
+    <properties>
+        <start-class>cn.telbox.microarch.sample.springbootwithscala.ScalaApp</start-class>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

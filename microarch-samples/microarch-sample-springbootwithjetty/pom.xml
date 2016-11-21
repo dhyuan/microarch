@@ -14,6 +14,7 @@
 
     <properties>
         <spring-boot-starter-web.for.jetty.version>1.3.5.RELEASE</spring-boot-starter-web.for.jetty.version>
+        <start-class>cn.telbox.microarch.sample.springbootwithjetty.AppOnJetty</start-class>
     </properties>
 
 

@@ -1,12 +1,13 @@
 package cn.telbox.microarch.sample.springbootwithjetty;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Created by dahui on 05/11/2016.
  */
-@org.springframework.boot.autoconfigure.SpringBootApplication
+@SpringBootApplication
 public class AppOnJetty {
 
     public static void main(String[] args) {
