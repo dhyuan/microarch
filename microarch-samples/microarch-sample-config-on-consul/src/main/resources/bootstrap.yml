@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: demo-ConfigOnConsul-service
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500

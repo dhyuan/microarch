@@ -20,5 +20,6 @@
         <module>microarch-sample-springbootwithscala</module>
         <module>microarch-sample-springcloud</module>
         <module>microarch-sample-config-on-zookeeper</module>
+        <module>microarch-sample-config-on-consul</module>
     </modules>
 </project>
