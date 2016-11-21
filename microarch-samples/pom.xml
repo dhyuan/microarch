@@ -21,5 +21,6 @@
         <module>microarch-sample-springcloud</module>
         <module>microarch-sample-config-on-zookeeper</module>
         <module>microarch-sample-config-on-consul</module>
+        <module>microarch-sample-ureka-server</module>
     </modules>
 </project>

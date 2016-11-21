@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: DemoOfUrekaService
+  cloud:
+    zookeeper:
+      config:
+        enabled: true
+        root: microarch-configuration
+        defaultContext: defaultSetting
+        profileSeparator: '::'
