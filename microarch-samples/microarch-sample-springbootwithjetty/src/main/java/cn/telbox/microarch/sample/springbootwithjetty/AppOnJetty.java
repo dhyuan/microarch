@@ -2,11 +2,13 @@ package cn.telbox.microarch.sample.springbootwithjetty;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Created by dahui on 05/11/2016.
  */
+@EnableDiscoveryClient
 @SpringBootApplication
 public class AppOnJetty {
 

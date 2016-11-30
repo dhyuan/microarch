@@ -19,7 +19,9 @@
 	<modules>
 		<module>microarch-parent</module>
 		<module>microarch-base</module>
-		<module>microarch-mongo</module>
+		<module>demo/mongo/GeoJsonData</module>
+		<module>demo/mongo/ReactiveMongoWithRxJava</module>
+		<module>demo/mongo/ReactiveMongoWithReactiveStream</module>
 		<module>microarch-samples</module>
     </modules>
 

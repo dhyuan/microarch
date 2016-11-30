@@ -9,12 +9,8 @@ import cn.telbox.microarch.demo.mongo.geo.model.DistrictInfo;
 public class TestGeo {
 
     public static void main(String[] args) {
-
         JsonParser reader = new JsonParser();
         DistrictInfo districtInfo = reader.read(GeoDataDemo.JSON, DistrictInfo.class);
         districtInfo.setQgisFeatures();
-
-
-
     }
 }

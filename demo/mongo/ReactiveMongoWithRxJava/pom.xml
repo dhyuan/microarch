@@ -6,11 +6,11 @@
         <artifactId>microarch-parent</artifactId>
         <groupId>cn.telbox</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../microarch-parent/pom.xml</relativePath>
+        <relativePath>../../../microarch-parent</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>microarch-mongo</artifactId>
+    <artifactId>demo-mongo-reactive-RxJava</artifactId>
 
     <properties>
         <start-class>cn.telbox.microarch.demo.mongo.geo.GeoDataDemo</start-class>
