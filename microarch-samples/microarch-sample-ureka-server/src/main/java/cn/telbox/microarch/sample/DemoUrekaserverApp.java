@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
+ *
+ * The configuration item about Eureka can be move to config in the zookeeper.
+ *
  * Created by dahui on 21/11/2016.
  */
 
