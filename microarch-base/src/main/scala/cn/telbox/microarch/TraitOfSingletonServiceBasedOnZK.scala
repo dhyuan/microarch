@@ -1,10 +1,9 @@
-package cn.telbox.microarch.base.tools
+package cn.telbox.microarch
 
-import java.util.concurrent.{ConcurrentHashMap, TimeUnit}
+import java.util.concurrent.ConcurrentHashMap
 
-import org.apache.curator.RetryPolicy
-import org.apache.curator.framework.{CuratorFramework, CuratorFrameworkFactory}
 import org.apache.curator.framework.recipes.leader.LeaderLatch
+import org.apache.curator.framework.{CuratorFramework, CuratorFrameworkFactory}
 import org.apache.curator.retry.ExponentialBackoffRetry
 import org.slf4j.{Logger, LoggerFactory}
 
