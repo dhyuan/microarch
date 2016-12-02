@@ -20,13 +20,13 @@ public class ReactiveMongWithRxJavaApp {
 
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
-    private MongoDatabase mongoClient() {
+    MongoDatabase mongoClient() {
         MongoClient mongoClient = MongoClients.create("mongodb://localhost");
         return mongoClient.getDatabase("yourdb");
     }
 
     @Bean
-    private CommandLineRunner cmd(MongoDatabase db) {
+    CommandLineRunner cmd(MongoDatabase db) {
         return arg -> {
 
             insertManyRecords();
