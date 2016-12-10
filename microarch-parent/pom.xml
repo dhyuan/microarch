@@ -46,153 +46,6 @@
     </properties>
 
 
-
-
-    <!--<dependencyManagement>-->
-        <!--<dependencies>-->
-            <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
-                <!--&lt;!&ndash;<groupId>org.springframework.cloud</groupId>&ndash;&gt;-->
-                <!--&lt;!&ndash;<artifactId>spring-cloud-dependencies</artifactId>&ndash;&gt;-->
-                <!--&lt;!&ndash;<version>Brixton.SR2</version>&ndash;&gt;-->
-                <!--&lt;!&ndash;<type>pom</type>&ndash;&gt;-->
-                <!--&lt;!&ndash;<scope>import</scope>&ndash;&gt;-->
-            <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
-
-            <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
-                <!--&lt;!&ndash;<groupId>org.springframework</groupId>&ndash;&gt;-->
-                <!--&lt;!&ndash;<artifactId>spring-context</artifactId>&ndash;&gt;-->
-                <!--&lt;!&ndash;<version>4.3.3.RELEASE</version>&ndash;&gt;-->
-            <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
-
-            <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
-                <!--&lt;!&ndash;<groupId>org.springframework</groupId>&ndash;&gt;-->
-                <!--&lt;!&ndash;<artifactId>spring-beans</artifactId>&ndash;&gt;-->
-                <!--&lt;!&ndash;<version>4.3.3.RELEASE</version>&ndash;&gt;-->
-            <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
-
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-starter</artifactId>-->
-                <!--<version>${spring-boot-starter.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-starter-actuator</artifactId>-->
-                <!--<version>${spring-boot-starter.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.cloud</groupId>-->
-                <!--<artifactId>spring-cloud-starter-config</artifactId>-->
-                <!--<version>${spring-cloud-starter-config.version}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.cloud</groupId>-->
-                <!--<artifactId>spring-cloud-config-dependencies</artifactId>-->
-                <!--<version>${spring-cloud-starter-config.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.cloud</groupId>-->
-                <!--<artifactId>spring-cloud-starter-zookeeper</artifactId>-->
-                <!--<version>${spring-cloud-starter-zookeeper.version}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.cloud</groupId>-->
-                <!--<artifactId>spring-cloud-zookeeper-discovery</artifactId>-->
-                <!--<version>${spring-cloud-zookeeper-discovery.version}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.cloud</groupId>-->
-                <!--<artifactId>spring-cloud-starter-zookeeper-config</artifactId>-->
-                <!--<version>${spring-cloud-starter-zookeeper-config.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-starter-web</artifactId>-->
-                <!--<version>${spring-boot-start-web.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-starter-security</artifactId>-->
-                <!--<version>${spring-boot-start-security.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-starter-test</artifactId>-->
-                <!--<version>${spring-boot-starter-test.version}</version>-->
-                <!--<scope>test</scope>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>org.projectlombok</groupId>-->
-                <!--<artifactId>lombok</artifactId>-->
-                <!--<version>${lombok.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>ch.qos.logback</groupId>-->
-                <!--<artifactId>logback-classic</artifactId>-->
-                <!--<version>${logback-classic.version}</version>-->
-            <!--</dependency>-->
-
-
-            <!--&lt;!&ndash; https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui &ndash;&gt;-->
-            <!--<dependency>-->
-                <!--<groupId>io.springfox</groupId>-->
-                <!--<artifactId>springfox-swagger-ui</artifactId>-->
-                <!--<version>${springfox-swagger-ui.version}</version>-->
-            <!--</dependency>-->
-            <!--&lt;!&ndash; https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 &ndash;&gt;-->
-            <!--<dependency>-->
-                <!--<groupId>io.springfox</groupId>-->
-                <!--<artifactId>springfox-swagger2</artifactId>-->
-                <!--<version>${springfox-swagger2.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>org.apache.curator</groupId>-->
-                <!--<artifactId>curator-recipes</artifactId>-->
-                <!--<version>${curator-recipes.version}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.apache.curator</groupId>-->
-                <!--<artifactId>curator-client</artifactId>-->
-                <!--<version>${curator-recipes.version}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.apache.curator</groupId>-->
-                <!--<artifactId>curator-framework</artifactId>-->
-                <!--<version>${curator-recipes.version}</version>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>com.google.collections</groupId>-->
-                <!--<artifactId>google-collections</artifactId>-->
-                <!--<version>1.0</version>-->
-            <!--</dependency>-->
-
-
-            <!--&lt;!&ndash; Scala &ndash;&gt;-->
-            <!--<dependency>-->
-                <!--<groupId>org.scala-lang</groupId>-->
-                <!--<artifactId>scala-library</artifactId>-->
-                <!--<version>${scala.version}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.scala-lang</groupId>-->
-                <!--<artifactId>scala-compiler</artifactId>-->
-                <!--<version>${scala.version}</version>-->
-            <!--</dependency>-->
-
-        <!--</dependencies>-->
-    <!--</dependencyManagement>-->
-
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -202,6 +55,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
 
         <dependency>
@@ -242,46 +100,41 @@
                 <scope>import</scope>
             </dependency>
 
-
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>${spring-boot-starter-web.version}</version>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator-recipes.version}</version>
             </dependency>
 
             <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-recipes</artifactId>
-            <version>${curator-recipes.version}</version>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>${curator-recipes.version}</version>
             </dependency>
+
             <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-client</artifactId>
-            <version>${curator-recipes.version}</version>
-            </dependency>
-            <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-framework</artifactId>
-            <version>${curator-recipes.version}</version>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator-recipes.version}</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
             <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${springfox-swagger-ui.version}</version>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger-ui.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
             <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${springfox-swagger2.version}</version>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
             </dependency>
 
             <dependency>
-            <groupId>com.google.collections</groupId>
-            <artifactId>google-collections</artifactId>
-            <version>1.0</version>
+                <groupId>com.google.collections</groupId>
+                <artifactId>google-collections</artifactId>
+                <version>1.0</version>
             </dependency>
 
 

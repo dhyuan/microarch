@@ -22,5 +22,7 @@
         <!--<module>microarch-sample-config-on-zookeeper</module>-->
         <!--<module>microarch-sample-config-on-consul</module>-->
         <module>microarch-sample-ureka-server</module>
+        <module>microarch-sample-config-server-git</module>
+        <module>microarch-sample-organization-service</module>
     </modules>
 </project>
