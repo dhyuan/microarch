@@ -21,3 +21,4 @@ Thumbs.db
 *.ipr
 *.iws
 out
+topology/devEnv/.vagrant

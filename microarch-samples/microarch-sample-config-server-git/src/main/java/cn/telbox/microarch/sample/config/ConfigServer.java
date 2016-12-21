@@ -13,7 +13,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  *     git clone https://github.com/dhyuan/config-repo.git to your HOME directory.
  * 3) add spring.cloud.config.server.git.uri in the application.properties.
  * 4) start the application
- * 5) visit http://localhost:8888/organization-service/master
+ * 5) visit http://localhost:8888/microarch/organization-service/master
  */
 @EnableConfigServer
 @SpringBootApplication
