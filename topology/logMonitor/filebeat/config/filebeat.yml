@@ -16,6 +16,8 @@ filebeat.prospectors:
 # Below are the prospector specific configurations.
 
 - input_type: log
+  name: apachLog
+  tags: ["apach", "syslog"]
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
@@ -58,6 +60,16 @@ filebeat.prospectors:
   # Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
   #multiline.match: after
 
+- input_type: log
+  paths:
+    - /serverlogs/applog/*.log
+
+  name: nixleLog
+  tags: ["service-nixle"]
+  multiline:
+    pattern: '^[[:space:]]+|^Caused by:'
+    negate: false
+    match: after
 
 #================================ General =====================================
 
@@ -90,9 +102,14 @@ filebeat.prospectors:
   #password: "changeme"
 
 #----------------------------- Logstash output --------------------------------
-output.logstash:
+output:
+
+  console:
+    pretty: true
+  
   # The Logstash hosts
-  hosts: ["logstashLDC:5043"]
+  logstash:
+    hosts: ["logstash:5043"]
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
@@ -108,7 +125,7 @@ output.logstash:
 
 # Sets log level. The default log level is info.
 # Available log levels are: critical, error, warning, info, debug
-#logging.level: debug
+logging.level: debug
 
 # At debug level, you can selectively enable logging only for some components.
 # To enable all selectors use ["*"]. Examples of other selectors are "beat",

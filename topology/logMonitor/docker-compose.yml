@@ -10,13 +10,13 @@ services:
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:5.2.1
+    container_name: elasticsearch
     ports:
       - "127.0.0.1:9200:9200"
     volumes:
       - ./elasticsearch/config:/usr/share/elasticsearch/config
-      - ./tutorialLog/applog:/applogs
     environment:
-      SERVER_NAME: elasticsearchLDC
+      SERVER_NAME: elasticsearch
       HTTP_HOST: "0.0.0.0"
       TRANSPORT_HOST: "0.0.0.0"
     # resources:
@@ -29,13 +29,13 @@ services:
 
   logstash:
     image: docker.elastic.co/logstash/logstash:5.2.1
+    container_name: logstash
     volumes:
-      - ./logstash/pipeline:/usr/share/logstash/pipeline
       - ./logstash/pipeline:/usr/share/logstash/pipeline
     depends_on:
       - elasticsearch
     links:
-      - elasticsearch:elasticsearchLDC
+      - elasticsearch:elasticsearch
     entrypoint:
       - logstash
       - -f
@@ -44,6 +44,7 @@ services:
 
   kibana:
     image: docker.elastic.co/kibana/kibana:5.2.1
+    container_name: kibana
     depends_on:
       - elasticsearch
     ports:
@@ -51,10 +52,11 @@ services:
     volumes:
       - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
     links:
-      - elasticsearch:elasticsearchLDC
+      - elasticsearch:elasticsearch
 
   filebeat:
     image: prima/filebeat:5.2.1
+    container_name: filebeat
     links:
       - logstash:logstashLDC
     volumes:

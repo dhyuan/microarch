@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+
+  logstash:
+    container_name: logstash
+    image: docker.elastic.co/logstash/logstash:5.2.1
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+    entrypoint:
+      - logstash
+      - -f
+      - /usr/share/logstash/pipeline/first-pipeline.conf
+      - --config.reload.automatic
+
+  filebeat:
+    container_name: filebeat
+    image: prima/filebeat:5.2.1
+    links:
+      - logstash:logstash
+    volumes:
+      - ./filebeat/config/filebeat.yml:/filebeat.yml
+      - ./tutorialLog:/serverlogs
+    entrypoint:
+      - filebeat
+      - -e
+      - -d
+      - "publish"
