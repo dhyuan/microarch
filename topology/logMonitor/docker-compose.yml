@@ -1,0 +1,67 @@
+version: "3"
+
+services:
+
+  # How to setup cluster of elasticsearch. 
+  #     https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+  # About how to use resource settings for docker.  
+  #     https://docs.docker.com/engine/reference/run/#/runtime-constraints-on-resources
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.2.1
+    ports:
+      - "127.0.0.1:9200:9200"
+    volumes:
+      - ./elasticsearch/config:/usr/share/elasticsearch/config
+      - ./tutorialLog/applog:/applogs
+    environment:
+      SERVER_NAME: elasticsearchLDC
+      HTTP_HOST: "0.0.0.0"
+      TRANSPORT_HOST: "0.0.0.0"
+    # resources:
+    #   limits:
+    #     cpus: '0.001'
+    #     memory: 300M
+    #   reservations:
+    #     cpus: '0.0001'
+    #     memory: 200M
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:5.2.1
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch:elasticsearchLDC
+    entrypoint:
+      - logstash
+      - -f
+      - /usr/share/logstash/pipeline/first-pipeline.conf
+      - --config.reload.automatic
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:5.2.1
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+    volumes:
+      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    links:
+      - elasticsearch:elasticsearchLDC
+
+  filebeat:
+    image: prima/filebeat:5.2.1
+    links:
+      - logstash:logstashLDC
+    volumes:
+      - ./filebeat/config/filebeat.yml:/filebeat.yml
+      - ./tutorialLog:/serverlogs
+    entrypoint:
+      - filebeat
+      - -e
+      - -d
+      - "publish"
