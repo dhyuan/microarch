@@ -39,7 +39,7 @@ services:
     entrypoint:
       - logstash
       - -f
-      - /usr/share/logstash/pipeline/first-pipeline.conf
+      - /usr/share/logstash/pipeline/applog-pipeline.conf
       - --config.reload.automatic
 
   kibana:
@@ -58,7 +58,7 @@ services:
     image: prima/filebeat:5.2.1
     container_name: filebeat
     links:
-      - logstash:logstashLDC
+      - logstash:logstash
     volumes:
       - ./filebeat/config/filebeat.yml:/filebeat.yml
       - ./tutorialLog:/serverlogs

@@ -16,8 +16,7 @@ filebeat.prospectors:
 # Below are the prospector specific configurations.
 
 - input_type: log
-  name: apachLog
-  tags: ["apach", "syslog"]
+  tags: ["apache", "syslog"]
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
@@ -25,7 +24,8 @@ filebeat.prospectors:
     #- D:\devEnv\logMonitor\tutorialLog\*.log
     #- /var/log/*.log
     #- c:\programdata\elasticsearch\logs\*
-
+  fields:
+    type: apacheLog
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.
   #exclude_lines: ["^DBG"]
@@ -63,8 +63,8 @@ filebeat.prospectors:
 - input_type: log
   paths:
     - /serverlogs/applog/*.log
-
-  name: nixleLog
+  fields:
+    type: nixleLog
   tags: ["service-nixle"]
   multiline:
     pattern: '^[[:space:]]+|^Caused by:'

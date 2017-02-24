@@ -1,0 +1,893 @@
+2017-02-24 16:34:27,431 INFO (org.eclipse.jetty.server.Server:253)- jetty-8.0.4.v20111024
+2017-02-24 16:34:27,801 INFO (org.eclipse.jetty.webapp.StandardDescriptorProcessor:262)- NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2017-02-24 16:34:27,916 INFO (org.eclipse.jetty.server.handler.ContextHandler:673)- started o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+2017-02-24 16:34:27,916 INFO (org.eclipse.jetty.server.handler.ContextHandler:673)- started o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+2017-02-24 16:34:28,066 INFO (/:1831)- Initializing Spring root WebApplicationContext
+2017-02-24 16:34:29,961 INFO (com.everbridge.platform.common.config.SystemPropertyPlaceholderConfigurer:172)- Loading properties file from URL [file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/nixle.properties]
+2017-02-24 16:34:30,136 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:79)- filterDataSource init 
+2017-02-24 16:34:31,180 WARN (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:181)- allMongoDataSourceList is null 
+2017-02-24 16:34:31,197 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017filestore
+2017-02-24 16:34:31,200 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017coredb
+2017-02-24 16:34:31,201 ERROR (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:60)- init exception 
+2017-02-24 16:34:31,237 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.system.model.CollectionMapping,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@5bb7643d
+2017-02-24 16:34:31,238 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24 16:34:31,238 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017coredb, className: com.everbridge.platform.system.model.CollectionMapping
+2017-02-24 16:34:31,835 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ===== NixleAlertFeedServiceImpl instance.
+2017-02-24 16:34:32,052 ERROR (org.springframework.web.context.ContextLoader:331)- Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoDataSourceDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+Related cause: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clusterCoordinateServiceInvoke' defined in class path resource [applicationContext-safetyawareness.xml]: Cannot resolve reference to bean 'nixleAlertFeedService' while setting bean property 'arguments' with key [1]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nixleAlertFeedService' defined in class path resource [applicationContext-safetyawareness.xml]: Cannot resolve reference to bean 'alertFeedPullTimeDao' while setting bean property 'alertFeedPullTimeDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'alertFeedPullTimeDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:672)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:403)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:664)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:239)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1212)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:610)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:453)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:89)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:262)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at com.everbridge.platform.nixle.NixleServiceAppMain.main(NixleServiceAppMain.java:24)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:140)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1034)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 27 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:275)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1022)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 42 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:267)
+	... 51 more
+Caused by: java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.util.Assert.hasText(Assert.java:162)
+	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.<init>(SimpleMongoDbFactory.java:142)
+	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.<init>(SimpleMongoDbFactory.java:93)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
+	... 53 more
+Related cause:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clusterCoordinateServiceInvoke' defined in class path resource [applicationContext-safetyawareness.xml]: Cannot resolve reference to bean 'nixleAlertFeedService' while setting bean property 'arguments' with key [1]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nixleAlertFeedService' defined in class path resource [applicationContext-safetyawareness.xml]: Cannot resolve reference to bean 'alertFeedPullTimeDao' while setting bean property 'alertFeedPullTimeDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'alertFeedPullTimeDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:382)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1469)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getTypeForFactoryBean(AbstractBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:802)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:542)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:436)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:412)
+	at org.springframework.beans.factory.BeanFactoryUtils.beanNamesForTypeIncludingAncestors(BeanFactoryUtils.java:187)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1105)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:672)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:403)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:664)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:239)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1212)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:610)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:453)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:89)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:262)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at com.everbridge.platform.nixle.NixleServiceAppMain.main(NixleServiceAppMain.java:24)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nixleAlertFeedService' defined in class path resource [applicationContext-safetyawareness.xml]: Cannot resolve reference to bean 'alertFeedPullTimeDao' while setting bean property 'alertFeedPullTimeDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'alertFeedPullTimeDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1469)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 47 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'alertFeedPullTimeDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 57 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 65 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:140)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1034)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 67 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:275)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1034)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 82 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:267)
+	... 91 more
+Caused by: java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.util.Assert.hasText(Assert.java:162)
+	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.<init>(SimpleMongoDbFactory.java:142)
+	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.<init>(SimpleMongoDbFactory.java:93)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
+	... 93 more
+2017-02-24 16:34:32,081 WARN (org.eclipse.jetty.webapp.WebAppContext:462)- Failed startup of context o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoDataSourceDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+Related cause: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clusterCoordinateServiceInvoke' defined in class path resource [applicationContext-safetyawareness.xml]: Cannot resolve reference to bean 'nixleAlertFeedService' while setting bean property 'arguments' with key [1]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nixleAlertFeedService' defined in class path resource [applicationContext-safetyawareness.xml]: Cannot resolve reference to bean 'alertFeedPullTimeDao' while setting bean property 'alertFeedPullTimeDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'alertFeedPullTimeDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:672)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:403)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:664)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:239)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1212)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:610)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:453)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:89)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:262)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at com.everbridge.platform.nixle.NixleServiceAppMain.main(NixleServiceAppMain.java:24)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:140)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1034)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 27 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:275)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1022)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 42 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:267)
+	... 51 more
+Caused by: java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.util.Assert.hasText(Assert.java:162)
+	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.<init>(SimpleMongoDbFactory.java:142)
+	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.<init>(SimpleMongoDbFactory.java:93)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
+	... 53 more
+Related cause:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clusterCoordinateServiceInvoke' defined in class path resource [applicationContext-safetyawareness.xml]: Cannot resolve reference to bean 'nixleAlertFeedService' while setting bean property 'arguments' with key [1]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nixleAlertFeedService' defined in class path resource [applicationContext-safetyawareness.xml]: Cannot resolve reference to bean 'alertFeedPullTimeDao' while setting bean property 'alertFeedPullTimeDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'alertFeedPullTimeDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:382)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1469)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getTypeForFactoryBean(AbstractBeanFactory.java:1421)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:802)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:542)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:436)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:412)
+	at org.springframework.beans.factory.BeanFactoryUtils.beanNamesForTypeIncludingAncestors(BeanFactoryUtils.java:187)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1105)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:672)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:403)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:664)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:239)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1212)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:610)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:453)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:89)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:262)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at com.everbridge.platform.nixle.NixleServiceAppMain.main(NixleServiceAppMain.java:24)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nixleAlertFeedService' defined in class path resource [applicationContext-safetyawareness.xml]: Cannot resolve reference to bean 'alertFeedPullTimeDao' while setting bean property 'alertFeedPullTimeDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'alertFeedPullTimeDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1469)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 47 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'alertFeedPullTimeDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 57 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.data.mongodb.core.MongoTemplate com.everbridge.platform.framework.persistence.dao.mongo.MongoBaseDao.mongoTemplate; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 65 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoTemplate' defined in class path resource [applicationContext-mongo.xml]: Cannot resolve reference to bean 'sspMongoDbFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:140)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1034)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1120)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1044)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 67 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sspMongoDbFactory': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:275)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1034)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 82 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mongodb.core.SimpleMongoDbFactory]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:267)
+	... 91 more
+Caused by: java.lang.IllegalArgumentException: Database name must not be empty
+	at org.springframework.util.Assert.hasText(Assert.java:162)
+	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.<init>(SimpleMongoDbFactory.java:142)
+	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.<init>(SimpleMongoDbFactory.java:93)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
+	... 93 more
+2017-02-24 16:34:32,095 INFO (org.eclipse.jetty.server.AbstractConnector:320)- Started SelectChannelConnector@0.0.0.0:9089 STARTING
+2017-02-24 16:34:32,119 INFO (com.everbridge.platform.nixle.NixleServiceAppMain:47)- Server started successfully on port 9089 at Fri Feb 24 16:34:32 CST 2017.
+2017-02-24T04:36:44.354+08:00 INFO (org.eclipse.jetty.server.Server:253)- jetty-8.0.4.v20111024
+2017-02-24T04:36:44.703+08:00 INFO (org.eclipse.jetty.webapp.StandardDescriptorProcessor:262)- NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2017-02-24T04:36:44.917+08:00 INFO (org.eclipse.jetty.server.handler.ContextHandler:673)- started o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+2017-02-24T04:36:44.917+08:00 INFO (org.eclipse.jetty.server.handler.ContextHandler:673)- started o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+2017-02-24T04:36:44.940+08:00 INFO (/:1831)- Initializing Spring root WebApplicationContext
+2017-02-24T04:36:46.456+08:00 INFO (com.everbridge.platform.common.config.SystemPropertyPlaceholderConfigurer:172)- Loading properties file from URL [file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/nixle.properties]
+2017-02-24T04:36:46.629+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:79)- filterDataSource init 
+2017-02-24T04:36:47.621+08:00 WARN (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:181)- allMongoDataSourceList is null 
+2017-02-24T04:36:47.629+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017filestore
+2017-02-24T04:36:47.632+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017coredb
+2017-02-24T04:36:47.636+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017ssp0
+2017-02-24T04:36:47.656+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.system.model.CollectionMapping,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@1f38957
+2017-02-24T04:36:47.656+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:36:47.656+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017coredb, className: com.everbridge.platform.system.model.CollectionMapping
+2017-02-24T04:36:48.128+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ===== NixleAlertFeedServiceImpl instance.
+2017-02-24T04:36:48.320+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.nixle.model.NixlePullerSetting,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e47a03
+2017-02-24T04:36:48.321+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:36:48.322+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017ssp0, className: com.everbridge.platform.nixle.model.NixlePullerSetting
+2017-02-24T04:36:48.799+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.filestore.model.AbstractResource,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@378cfecf
+2017-02-24T04:36:48.800+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:36:48.800+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017filestore, className: com.everbridge.platform.filestore.model.AbstractResource
+2017-02-24T04:36:49.713+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.notification.model.Notification,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@6e4c0d8c
+2017-02-24T04:36:49.714+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:36:49.714+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017coredb, className: com.everbridge.platform.notification.model.Notification
+2017-02-24T04:36:49.817+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.alert.model.AlertFeed,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e47a03
+2017-02-24T04:36:49.817+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:36:49.819+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017ssp0, className: com.everbridge.platform.alert.model.AlertFeed
+2017-02-24T04:36:49.848+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.nixle.model.NixlePublicationBaseInfo,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e47a03
+2017-02-24T04:36:49.848+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:36:49.849+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017ssp0, className: com.everbridge.platform.nixle.model.NixlePublicationBaseInfo
+2017-02-24T04:36:49.851+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- execute postConstruct() in NixleAlertFeedServiceImpl ...
+2017-02-24T04:36:49.867+08:00 INFO (org.apache.curator.framework.imps.CuratorFrameworkImpl:238)- Starting
+2017-02-24T04:36:50.827+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2017-02-24T04:36:50.828+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:host.name=admin-p
+2017-02-24T04:36:50.829+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.version=1.8.0_91
+2017-02-24T04:36:50.829+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.vendor=Oracle Corporation
+2017-02-24T04:36:50.829+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.home=C:\Program Files\Java\jdk1.8.0_91\jre
+2017-02-24T04:36:50.829+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.class.path=C:\Users\George\AppData\Local\Temp\classpath38555.jar
+2017-02-24T04:36:50.830+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_91\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;D:\everbridge\scripts;D:\devTools\MongoDB\Server\3.2\bin;D:\devTools\apache-maven-3.3.9\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files (x86)\PuTTY\;D:\devTools\sbt-0.13.11\bin;C:\Program Files\CloudFoundry;D:\Program Files\TortoiseHg\;D:\devTools\nodejs\;D:\devTools\jad;D:\Program Files\OpenVPN\bin;D:\Program Files\Oracle\VirtualBox;D:\HashiCorp\Vagrant\bin;D:\devTools\filebeat-5.1.2-windows-x86_64;C:\Users\George\AppData\Local\Microsoft\WindowsApps;C:\Users\George\AppData\Roaming\npm;C:\Program Files\Oracle\VirtualBox;D:\devTools\DockerToolbox;.
+2017-02-24T04:36:50.830+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.io.tmpdir=C:\Users\George\AppData\Local\Temp\
+2017-02-24T04:36:50.830+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.compiler=<NA>
+2017-02-24T04:36:50.830+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:os.name=Windows 10
+2017-02-24T04:36:50.831+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:os.arch=amd64
+2017-02-24T04:36:50.831+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:os.version=10.0
+2017-02-24T04:36:50.831+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:user.name=George
+2017-02-24T04:36:50.832+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:user.home=C:\Users\George
+2017-02-24T04:36:50.833+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:user.dir=D:\everbridge\projects\omniplatform
+2017-02-24T04:36:50.835+08:00 INFO (org.apache.zookeeper.ZooKeeper:438)- Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@43d9f1a2
+2017-02-24T04:36:50.886+08:00 INFO (com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl:47)- regist server to zookeeper, basePath: /nixle/safetyawareness/pubPullerScheduler/leader, serverId: admin-p
+2017-02-24T04:36:50.892+08:00 INFO (org.apache.zookeeper.ClientCnxn:975)- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-02-24T04:36:50.894+08:00 INFO (org.apache.zookeeper.ClientCnxn:852)- Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-02-24T04:56:28.807+08:00 INFO (org.eclipse.jetty.server.Server:253)- jetty-8.0.4.v20111024
+2017-02-24T04:56:29.251+08:00 INFO (org.eclipse.jetty.webapp.StandardDescriptorProcessor:262)- NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2017-02-24T04:56:29.424+08:00 INFO (org.eclipse.jetty.server.handler.ContextHandler:673)- started o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+2017-02-24T04:56:29.425+08:00 INFO (org.eclipse.jetty.server.handler.ContextHandler:673)- started o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+2017-02-24T04:56:29.506+08:00 INFO (/:1831)- Initializing Spring root WebApplicationContext
+2017-02-24T04:56:31.039+08:00 INFO (com.everbridge.platform.common.config.SystemPropertyPlaceholderConfigurer:172)- Loading properties file from URL [file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/nixle.properties]
+2017-02-24T04:56:31.215+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:79)- filterDataSource init 
+2017-02-24T04:56:32.279+08:00 WARN (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:181)- allMongoDataSourceList is null 
+2017-02-24T04:56:32.288+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017filestore
+2017-02-24T04:56:32.290+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017coredb
+2017-02-24T04:56:32.295+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017ssp0
+2017-02-24T04:56:32.314+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.system.model.CollectionMapping,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@1f38957
+2017-02-24T04:56:32.315+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:56:32.315+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017coredb, className: com.everbridge.platform.system.model.CollectionMapping
+2017-02-24T04:56:33.728+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ===== NixleAlertFeedServiceImpl instance.
+2017-02-24T04:56:33.908+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.nixle.model.NixlePullerSetting,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e47a03
+2017-02-24T04:56:33.910+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:56:33.910+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017ssp0, className: com.everbridge.platform.nixle.model.NixlePullerSetting
+2017-02-24T04:56:34.285+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.filestore.model.AbstractResource,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@378cfecf
+2017-02-24T04:56:34.287+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:56:34.287+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017filestore, className: com.everbridge.platform.filestore.model.AbstractResource
+2017-02-24T04:56:34.648+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.notification.model.Notification,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e3315d9
+2017-02-24T04:56:34.648+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:56:34.649+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017coredb, className: com.everbridge.platform.notification.model.Notification
+2017-02-24T04:56:34.694+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.alert.model.AlertFeed,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e47a03
+2017-02-24T04:56:34.695+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:56:34.697+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017ssp0, className: com.everbridge.platform.alert.model.AlertFeed
+2017-02-24T04:56:34.721+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.nixle.model.NixlePublicationBaseInfo,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e47a03
+2017-02-24T04:56:34.721+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:56:34.721+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017ssp0, className: com.everbridge.platform.nixle.model.NixlePublicationBaseInfo
+2017-02-24T04:56:34.726+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- execute postConstruct() in NixleAlertFeedServiceImpl ...
+2017-02-24T04:56:34.733+08:00 INFO (org.apache.curator.framework.imps.CuratorFrameworkImpl:238)- Starting
+2017-02-24T04:56:35.648+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2017-02-24T04:56:35.649+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:host.name=admin-p
+2017-02-24T04:56:35.649+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.version=1.8.0_91
+2017-02-24T04:56:35.649+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.vendor=Oracle Corporation
+2017-02-24T04:56:35.650+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.home=C:\Program Files\Java\jdk1.8.0_91\jre
+2017-02-24T04:56:35.650+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.class.path=C:\Users\George\AppData\Local\Temp\classpath21729.jar
+2017-02-24T04:56:35.650+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_91\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;D:\everbridge\scripts;D:\devTools\MongoDB\Server\3.2\bin;D:\devTools\apache-maven-3.3.9\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files (x86)\PuTTY\;D:\devTools\sbt-0.13.11\bin;C:\Program Files\CloudFoundry;D:\Program Files\TortoiseHg\;D:\devTools\nodejs\;D:\devTools\jad;D:\Program Files\OpenVPN\bin;D:\Program Files\Oracle\VirtualBox;D:\HashiCorp\Vagrant\bin;D:\devTools\filebeat-5.1.2-windows-x86_64;C:\Users\George\AppData\Local\Microsoft\WindowsApps;C:\Users\George\AppData\Roaming\npm;C:\Program Files\Oracle\VirtualBox;D:\devTools\DockerToolbox;.
+2017-02-24T04:56:35.651+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.io.tmpdir=C:\Users\George\AppData\Local\Temp\
+2017-02-24T04:56:35.651+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.compiler=<NA>
+2017-02-24T04:56:35.651+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:os.name=Windows 10
+2017-02-24T04:56:35.651+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:os.arch=amd64
+2017-02-24T04:56:35.652+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:os.version=10.0
+2017-02-24T04:56:35.652+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:user.name=George
+2017-02-24T04:56:35.652+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:user.home=C:\Users\George
+2017-02-24T04:56:35.652+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:user.dir=D:\everbridge\projects\omniplatform
+2017-02-24T04:56:35.655+08:00 INFO (org.apache.zookeeper.ZooKeeper:438)- Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@23f86d8a
+2017-02-24T04:56:35.704+08:00 INFO (com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl:47)- regist server to zookeeper, basePath: /nixle/safetyawareness/pubPullerScheduler/leader, serverId: admin-p
+2017-02-24T04:56:35.714+08:00 INFO (org.apache.zookeeper.ClientCnxn:975)- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-02-24T04:56:35.719+08:00 INFO (org.apache.zookeeper.ClientCnxn:852)- Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-02-24T04:56:35.733+08:00 WARN (org.apache.zookeeper.ClientCnxnSocket:139)- Connected to an old server; r-o mode will be unavailable
+2017-02-24T04:56:35.733+08:00 INFO (org.apache.zookeeper.ClientCnxn:1235)- Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x15a4b187c09000b, negotiated timeout = 40000
+2017-02-24T04:56:35.744+08:00 INFO (org.apache.curator.framework.state.ConnectionStateManager:228)- State change: CONNECTED
+2017-02-24T04:56:36.847+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.datasource.model.MongoDataSource,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e3315d9
+2017-02-24T04:56:36.849+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T04:56:36.849+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017coredb, className: com.everbridge.platform.datasource.model.MongoDataSource
+2017-02-24T04:56:37.015+08:00 ERROR (com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl:31)- Error occured when getPathData:org.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /nixle/safetyawareness/pubPullerScheduler/leader\leaders\_c_5a2822f6-4a67-4628-b190-ce5a866a1520-latch-0000000836
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:111)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:1155)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl$4.call(GetDataBuilderImpl.java:302)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl$4.call(GetDataBuilderImpl.java:291)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.pathInForeground(GetDataBuilderImpl.java:287)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.forPath(GetDataBuilderImpl.java:279)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.forPath(GetDataBuilderImpl.java:41)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.getPathData(ClusterCoordinateServiceImpl.java:307)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.listAliveServerIds(ClusterCoordinateServiceImpl.java:198)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.listServersOfCluster(ClusterCoordinateServiceImpl.java:174)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCallbackServiceImpl.onAddServer(ClusterCallbackServiceImpl.java:28)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl$2.childEvent(ClusterCoordinateServiceImpl.java:380)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$5.apply(PathChildrenCache.java:516)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$5.apply(PathChildrenCache.java:510)
+	at org.apache.curator.framework.listen.ListenerContainer$1.run(ListenerContainer.java:92)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutorService.execute(MoreExecutors.java:299)
+	at org.apache.curator.framework.listen.ListenerContainer.forEach(ListenerContainer.java:83)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache.callListeners(PathChildrenCache.java:507)
+	at org.apache.curator.framework.recipes.cache.EventOperation.invoke(EventOperation.java:35)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$9.run(PathChildrenCache.java:759)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-02-24T04:56:37.583+08:00 INFO (org.hibernate.validator.internal.util.Version:30)- HV000001: Hibernate Validator 5.2.4.Final
+2017-02-24T04:56:37.805+08:00 INFO (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:165)- Initializing ExecutorService  'nixlePullerPoolThreadExecutor'
+2017-02-24T04:56:37.831+08:00 INFO (org.eclipse.jetty.server.handler.ContextHandler:673)- started o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+2017-02-24T04:56:37.953+08:00 INFO (/:1831)- Initializing Spring FrameworkServlet 'springServlet'
+2017-02-24T04:56:39.203+08:00 INFO (org.eclipse.jetty.server.AbstractConnector:320)- Started SelectChannelConnector@0.0.0.0:9089 STARTING
+2017-02-24T04:56:39.215+08:00 INFO (com.everbridge.platform.nixle.NixleServiceAppMain:47)- Server started successfully on port 9089 at Fri Feb 24 16:56:39 CST 2017.
+2017-02-24T05:00:00.001+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- I'm leader. I do the work. admin-p
+2017-02-24T05:00:00.008+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ===============  Begin to pullNixlePublications at 2017-02-24 17:00  ============= 
+2017-02-24T05:00:00.009+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   NixleAlertFeedServiceImpl scheduler begin to run.
+2017-02-24T05:00:00.064+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   The timestampForPullPubs PST 2017-02-23T00:59:58
+2017-02-24T05:00:00.065+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   The timestampForPullPubs Shanghai 2017-02-23T16:59:58
+2017-02-24T05:00:02.138+08:00 INFO (com.everbridge.platform.nixle.publication.service.PublicationServiceImpl:47)- Get latest pub list success! timestamp:1487840398
+2017-02-24T05:00:02.461+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- =======  Get the list of Pubs size=4 in 2396 million seconds. 
+2017-02-24T05:01:04.148+08:00 INFO (org.apache.zookeeper.ClientCnxn:1096)- Client session timed out, have not heard from server in 67155ms for sessionid 0x15a4b187c09000b, closing socket connection and attempting reconnect
+2017-02-24T05:01:04.148+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   after get pubs list, availableTimeSlot=225855 millionSeconds
+2017-02-24T05:01:04.249+08:00 INFO (org.apache.curator.framework.state.ConnectionStateManager:228)- State change: SUSPENDED
+2017-02-24T05:01:05.580+08:00 INFO (com.everbridge.platform.nixle.publication.service.PublicationServiceImpl:47)- Get pub detail success! pubId:5029105
+2017-02-24T05:01:05.628+08:00 INFO (com.everbridge.platform.nixle.publication.service.PublicationServiceImpl:47)- Get pub detail success! pubId:5029121
+2017-02-24T05:01:05.648+08:00 INFO (org.apache.zookeeper.ClientCnxn:975)- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-02-24T05:01:05.650+08:00 INFO (org.apache.zookeeper.ClientCnxn:852)- Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-02-24T05:01:05.658+08:00 WARN (org.apache.zookeeper.ClientCnxnSocket:139)- Connected to an old server; r-o mode will be unavailable
+2017-02-24T05:01:05.658+08:00 INFO (org.apache.curator.framework.state.ConnectionStateManager:228)- State change: LOST
+2017-02-24T05:01:05.658+08:00 INFO (org.apache.zookeeper.ClientCnxn:1094)- Unable to reconnect to ZooKeeper service, session 0x15a4b187c09000b has expired, closing socket connection
+2017-02-24T05:01:05.659+08:00 WARN (org.apache.curator.ConnectionState:288)- Session expired event received
+2017-02-24T05:01:05.661+08:00 INFO (org.apache.zookeeper.ZooKeeper:438)- Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@23f86d8a
+2017-02-24T05:01:05.663+08:00 INFO (org.apache.zookeeper.ClientCnxn:512)- EventThread shut down
+2017-02-24T05:01:05.665+08:00 INFO (org.apache.zookeeper.ClientCnxn:975)- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-02-24T05:01:05.666+08:00 INFO (org.apache.zookeeper.ClientCnxn:852)- Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-02-24T05:01:05.671+08:00 WARN (org.apache.zookeeper.ClientCnxnSocket:139)- Connected to an old server; r-o mode will be unavailable
+2017-02-24T05:01:05.671+08:00 INFO (org.apache.zookeeper.ClientCnxn:1235)- Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x15a4b187c09000c, negotiated timeout = 40000
+2017-02-24T05:01:05.672+08:00 INFO (org.apache.curator.framework.state.ConnectionStateManager:228)- State change: RECONNECTED
+2017-02-24T05:01:05.710+08:00 ERROR (com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl:31)- Error occured when getPathData:org.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /nixle/safetyawareness/pubPullerScheduler/leader\leaders\_c_c8c5ff67-3c20-41e1-8e43-da042a0b8e1a-latch-0000000838
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:111)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:1155)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl$4.call(GetDataBuilderImpl.java:302)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl$4.call(GetDataBuilderImpl.java:291)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.pathInForeground(GetDataBuilderImpl.java:287)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.forPath(GetDataBuilderImpl.java:279)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.forPath(GetDataBuilderImpl.java:41)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.getPathData(ClusterCoordinateServiceImpl.java:307)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.listAliveServerIds(ClusterCoordinateServiceImpl.java:198)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.listServersOfCluster(ClusterCoordinateServiceImpl.java:174)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCallbackServiceImpl.onDeleteServer(ClusterCallbackServiceImpl.java:37)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl$2.childEvent(ClusterCoordinateServiceImpl.java:395)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$5.apply(PathChildrenCache.java:516)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$5.apply(PathChildrenCache.java:510)
+	at org.apache.curator.framework.listen.ListenerContainer$1.run(ListenerContainer.java:92)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutorService.execute(MoreExecutors.java:299)
+	at org.apache.curator.framework.listen.ListenerContainer.forEach(ListenerContainer.java:83)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache.callListeners(PathChildrenCache.java:507)
+	at org.apache.curator.framework.recipes.cache.EventOperation.invoke(EventOperation.java:35)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$9.run(PathChildrenCache.java:759)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-02-24T05:01:05.718+08:00 ERROR (com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl:31)- Error occured when getPathData:org.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /nixle/safetyawareness/pubPullerScheduler/leader\leaders\_c_c8c5ff67-3c20-41e1-8e43-da042a0b8e1a-latch-0000000838
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:111)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:1155)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl$4.call(GetDataBuilderImpl.java:302)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl$4.call(GetDataBuilderImpl.java:291)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.pathInForeground(GetDataBuilderImpl.java:287)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.forPath(GetDataBuilderImpl.java:279)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.forPath(GetDataBuilderImpl.java:41)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.getPathData(ClusterCoordinateServiceImpl.java:307)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.listAliveServerIds(ClusterCoordinateServiceImpl.java:198)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.listServersOfCluster(ClusterCoordinateServiceImpl.java:174)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCallbackServiceImpl.onAddServer(ClusterCallbackServiceImpl.java:28)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl$2.childEvent(ClusterCoordinateServiceImpl.java:380)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$5.apply(PathChildrenCache.java:516)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$5.apply(PathChildrenCache.java:510)
+	at org.apache.curator.framework.listen.ListenerContainer$1.run(ListenerContainer.java:92)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutorService.execute(MoreExecutors.java:299)
+	at org.apache.curator.framework.listen.ListenerContainer.forEach(ListenerContainer.java:83)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache.callListeners(PathChildrenCache.java:507)
+	at org.apache.curator.framework.recipes.cache.EventOperation.invoke(EventOperation.java:35)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$9.run(PathChildrenCache.java:759)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-02-24T05:01:05.746+08:00 INFO (com.everbridge.platform.nixle.model.NixlePublicationBaseInfo:47)- NixlePub's Status ===> AlertFeedStatus   (Active, null) --> Active
+2017-02-24T05:01:05.752+08:00 INFO (com.everbridge.platform.nixle.model.NixlePublicationBaseInfo:47)- NixlePub's Status ===> AlertFeedStatus   (Active, null) --> Active
+2017-02-24T05:01:05.751+08:00 INFO (com.everbridge.platform.nixle.model.NixlePublicationBaseInfo:47)- NixlePub's Status ===> AlertFeedStatus   (Active, null) --> Active
+2017-02-24T05:01:05.756+08:00 INFO (com.everbridge.platform.nixle.model.NixlePublicationBaseInfo:47)- NixlePub's Status ===> AlertFeedStatus   (Active, null) --> Active
+2017-02-24T05:01:05.820+08:00 INFO (com.everbridge.platform.nixle.publication.service.PublicationServiceImpl:47)- Get pub detail success! pubId:5029167
+2017-02-24T05:01:05.824+08:00 INFO (com.everbridge.platform.nixle.model.NixlePublicationBaseInfo:47)- NixlePub's Status ===> AlertFeedStatus   (Active, null) --> Active
+2017-02-24T05:01:05.824+08:00 INFO (com.everbridge.platform.nixle.model.NixlePublicationBaseInfo:47)- NixlePub's Status ===> AlertFeedStatus   (Active, null) --> Active
+2017-02-24T05:01:06.311+08:00 INFO (com.everbridge.platform.nixle.publication.service.PublicationServiceImpl:47)- Get pub detail success! pubId:5029143
+2017-02-24T05:01:06.318+08:00 INFO (com.everbridge.platform.nixle.model.NixlePublicationBaseInfo:47)- NixlePub's Status ===> AlertFeedStatus   (Active, null) --> Active
+2017-02-24T05:01:06.318+08:00 INFO (com.everbridge.platform.nixle.model.NixlePublicationBaseInfo:47)- NixlePub's Status ===> AlertFeedStatus   (Active, null) --> Active
+2017-02-24T05:01:06.523+08:00 INFO (com.everbridge.platform.safetyawareness.dao.AlertFeedDao:117)- AlertFeed saved into DB. feedType=Nixle originalFeedId=5029167
+2017-02-24T05:01:06.523+08:00 INFO (com.everbridge.platform.safetyawareness.dao.AlertFeedDao:117)- AlertFeed saved into DB. feedType=Nixle originalFeedId=5029105
+2017-02-24T05:01:06.526+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   Get Pub: id=5029105  costTime:2367 millionSeconds   t=Thread[ForkJoinPool-1-worker-18,5,main]
+2017-02-24T05:01:06.527+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   Get Pub: id=5029167  costTime:2366 millionSeconds   t=Thread[ForkJoinPool-1-worker-4,5,main]
+2017-02-24T05:01:06.525+08:00 INFO (com.everbridge.platform.safetyawareness.dao.AlertFeedDao:117)- AlertFeed saved into DB. feedType=Nixle originalFeedId=5029121
+2017-02-24T05:01:06.528+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   Get Pub: id=5029121  costTime:2370 millionSeconds   t=Thread[ForkJoinPool-1-worker-11,5,main]
+2017-02-24T05:01:06.525+08:00 INFO (com.everbridge.platform.safetyawareness.dao.AlertFeedDao:117)- AlertFeed saved into DB. feedType=Nixle originalFeedId=5029143
+2017-02-24T05:01:06.530+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   Get Pub: id=5029143  costTime:2371 millionSeconds   t=Thread[ForkJoinPool-1-worker-25,5,main]
+2017-02-24T05:01:06.536+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp PST 2017-02-24T01:00
+2017-02-24T05:01:06.536+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp Shanghai 2017-02-24T17:00
+2017-02-24T05:01:06.536+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp is saved 1487926800 
+2017-02-24T05:01:06.537+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- Next Pull TimeStamp is saved ok.  1487926800  
+2017-02-24T05:01:06.538+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- NixleAlertFeedServiceImpl scheduler end. 
+2017-02-24T05:01:06.551+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- =======>>>>>> Scheduler Run End.   schedulerEndTime: 2017-02-24 17:01,  one round time: ===========> 66548
+2017-02-24T05:01:06.568+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- 
+
+
+2017-02-24T05:01:06.569+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ############### Nixle Publication Scheduler Process Report ###############
+2017-02-24T05:01:06.569+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---  restConnectionTimeout=240000 restReadTimeout=240000 
+2017-02-24T05:01:06.569+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---         The thread pool size:   30    
+2017-02-24T05:01:06.569+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---          The data to process:   total=4  activePubs=4  inactivePubs=0
+2017-02-24T05:01:06.569+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---           The filter process:   filteredNumber=0  
+2017-02-24T05:01:06.570+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---       The active pub process:   succeedNumberOfActivePubProcess=4  failedNumberOfActivePubProcess=0
+2017-02-24T05:01:06.570+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---  Single pub process statistic:   average=2368    max=2371    min=2366
+2017-02-24T05:01:06.570+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---          TotalCostTime:   66548 million seconds
+2017-02-24T05:01:06.570+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ==============  Active Nixle Publication Process Result  ==============
+2017-02-24T05:01:06.572+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ------- All the publications (4) processed well. ---------------
+2017-02-24T05:01:06.572+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- >>>>>>>>>>>>>    Succeed data list (only show 20 pubs)   <<<<<<<<<<<<<<<
+2017-02-24T05:01:06.585+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)-      pubId=5029167  usedTime=2366ms
+2017-02-24T05:01:06.601+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)-      pubId=5029105  usedTime=2367ms
+2017-02-24T05:01:06.601+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)-      pubId=5029121  usedTime=2370ms
+2017-02-24T05:01:06.601+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)-      pubId=5029143  usedTime=2371ms
+2017-02-24T05:01:06.601+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- -------------------------------------------------------------------------
+
+2017-02-24T05:01:06.627+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   after get pubs list, availableTimeSlot=290000 millionSeconds
+2017-02-24T05:01:06.628+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- 
+
+
+2017-02-24T05:01:06.628+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ############### Nixle Publication Failure Recover Report ###############
+2017-02-24T05:01:06.628+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---  restConnectionTimeout=240000 restReadTimeout=240000 
+2017-02-24T05:01:06.628+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---         The thread pool size:   30    
+2017-02-24T05:01:06.629+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---          The data to process:   total=0  activePubs=0  inactivePubs=0
+2017-02-24T05:01:06.629+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---           The filter process:   filteredNumber=0  
+2017-02-24T05:01:06.629+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---       The active pub process:   succeedNumberOfActivePubProcess=0  failedNumberOfActivePubProcess=0
+2017-02-24T05:01:06.629+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---  Single pub process statistic:   average=0    max=-9223372036854775808    min=9223372036854775807
+2017-02-24T05:01:06.629+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---          TotalCostTime:   0 million seconds
+2017-02-24T05:01:06.629+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ==============  Active Nixle Publication Process Result  ==============
+2017-02-24T05:01:06.629+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ------- All the publications (0) processed well. ---------------
+2017-02-24T05:01:06.629+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- -------------------------------------------------------------------------
+
+2017-02-24T05:05:00.004+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- I'm leader. I do the work. admin-p
+2017-02-24T05:05:00.005+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ===============  Begin to pullNixlePublications at 2017-02-24 17:05  ============= 
+2017-02-24T05:05:00.005+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   NixleAlertFeedServiceImpl scheduler begin to run.
+2017-02-24T05:05:00.006+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   The timestampForPullPubs PST 2017-02-24T01:00
+2017-02-24T05:05:00.006+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   The timestampForPullPubs Shanghai 2017-02-24T17:00
+2017-02-24T05:05:01.742+08:00 INFO (com.everbridge.platform.nixle.publication.service.PublicationServiceImpl:47)- Get latest pub list success! timestamp:1487926800
+2017-02-24T05:05:01.758+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- =======  Get the list of Pubs size=0 in 1751 million seconds. 
+2017-02-24T05:05:01.759+08:00 WARN (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:39)- ========   There is no new publication available. Is this normal case???
+2017-02-24T05:05:01.760+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp PST 2017-02-24T01:05
+2017-02-24T05:05:01.760+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp Shanghai 2017-02-24T17:05
+2017-02-24T05:05:01.760+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp is saved 1487927100 
+2017-02-24T05:05:01.760+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   Scheduler Run End
+2017-02-24T05:05:01.794+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   after get pubs list, availableTimeSlot=290000 millionSeconds
+2017-02-24T05:05:01.795+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- 
+
+
+2017-02-24T05:05:01.795+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ############### Nixle Publication Failure Recover Report ###############
+2017-02-24T05:05:01.796+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---  restConnectionTimeout=240000 restReadTimeout=240000 
+2017-02-24T05:05:01.796+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---         The thread pool size:   30    
+2017-02-24T05:05:01.796+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---          The data to process:   total=0  activePubs=0  inactivePubs=0
+2017-02-24T05:05:01.796+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---           The filter process:   filteredNumber=0  
+2017-02-24T05:05:01.796+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---       The active pub process:   succeedNumberOfActivePubProcess=0  failedNumberOfActivePubProcess=0
+2017-02-24T05:05:01.796+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---  Single pub process statistic:   average=0    max=-9223372036854775808    min=9223372036854775807
+2017-02-24T05:05:01.796+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---          TotalCostTime:   0 million seconds
+2017-02-24T05:05:01.796+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ==============  Active Nixle Publication Process Result  ==============
+2017-02-24T05:05:01.797+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ------- All the publications (0) processed well. ---------------
+2017-02-24T05:05:01.797+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- -------------------------------------------------------------------------
+
+2017-02-24T05:10:00.001+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- I'm leader. I do the work. admin-p
+2017-02-24T05:10:00.002+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ===============  Begin to pullNixlePublications at 2017-02-24 17:10  ============= 
+2017-02-24T05:10:00.002+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   NixleAlertFeedServiceImpl scheduler begin to run.
+2017-02-24T05:10:00.003+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   The timestampForPullPubs PST 2017-02-24T01:05
+2017-02-24T05:10:00.003+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   The timestampForPullPubs Shanghai 2017-02-24T17:05
+2017-02-24T05:10:01.208+08:00 INFO (com.everbridge.platform.nixle.publication.service.PublicationServiceImpl:47)- Get latest pub list success! timestamp:1487927100
+2017-02-24T05:10:01.212+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- =======  Get the list of Pubs size=0 in 1208 million seconds. 
+2017-02-24T05:10:01.213+08:00 WARN (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:39)- ========   There is no new publication available. Is this normal case???
+2017-02-24T05:10:01.213+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp PST 2017-02-24T01:10
+2017-02-24T05:10:01.213+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp Shanghai 2017-02-24T17:10
+2017-02-24T05:10:01.213+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp is saved 1487927400 
+2017-02-24T05:10:01.214+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   Scheduler Run End
+2017-02-24T05:10:01.233+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   after get pubs list, availableTimeSlot=290000 millionSeconds
+2017-02-24T05:10:01.234+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- 
+
+
+2017-02-24T05:10:01.234+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ############### Nixle Publication Failure Recover Report ###############
+2017-02-24T05:10:01.234+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---  restConnectionTimeout=240000 restReadTimeout=240000 
+2017-02-24T05:10:01.234+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---         The thread pool size:   30    
+2017-02-24T05:10:01.235+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---          The data to process:   total=0  activePubs=0  inactivePubs=0
+2017-02-24T05:10:01.235+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---           The filter process:   filteredNumber=0  
+2017-02-24T05:10:01.235+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---       The active pub process:   succeedNumberOfActivePubProcess=0  failedNumberOfActivePubProcess=0
+2017-02-24T05:10:01.235+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---  Single pub process statistic:   average=0    max=-9223372036854775808    min=9223372036854775807
+2017-02-24T05:10:01.235+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---          TotalCostTime:   0 million seconds
+2017-02-24T05:10:01.235+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ==============  Active Nixle Publication Process Result  ==============
+2017-02-24T05:10:01.236+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ------- All the publications (0) processed well. ---------------
+2017-02-24T05:10:01.236+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- -------------------------------------------------------------------------
+
+2017-02-24T05:15:00.000+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- I'm leader. I do the work. admin-p
+2017-02-24T05:15:00.000+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ===============  Begin to pullNixlePublications at 2017-02-24 17:15  ============= 
+2017-02-24T05:15:00.000+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   NixleAlertFeedServiceImpl scheduler begin to run.
+2017-02-24T05:15:00.001+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   The timestampForPullPubs PST 2017-02-24T01:10
+2017-02-24T05:15:00.002+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   The timestampForPullPubs Shanghai 2017-02-24T17:10
+2017-02-24T05:15:01.029+08:00 INFO (com.everbridge.platform.nixle.publication.service.PublicationServiceImpl:47)- Get latest pub list success! timestamp:1487927400
+2017-02-24T05:15:01.033+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- =======  Get the list of Pubs size=0 in 1031 million seconds. 
+2017-02-24T05:15:01.033+08:00 WARN (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:39)- ========   There is no new publication available. Is this normal case???
+2017-02-24T05:15:01.034+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp PST 2017-02-24T01:15
+2017-02-24T05:15:01.034+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp Shanghai 2017-02-24T17:15
+2017-02-24T05:15:01.034+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- The SuccessPullTimestamp is saved 1487927700 
+2017-02-24T05:15:01.034+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   Scheduler Run End
+2017-02-24T05:15:01.054+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ========   after get pubs list, availableTimeSlot=290000 millionSeconds
+2017-02-24T05:15:01.055+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- 
+
+
+2017-02-24T05:15:01.055+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ############### Nixle Publication Failure Recover Report ###############
+2017-02-24T05:15:01.055+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---  restConnectionTimeout=240000 restReadTimeout=240000 
+2017-02-24T05:15:01.055+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---         The thread pool size:   30    
+2017-02-24T05:15:01.055+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---          The data to process:   total=0  activePubs=0  inactivePubs=0
+2017-02-24T05:15:01.056+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---           The filter process:   filteredNumber=0  
+2017-02-24T05:15:01.056+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---       The active pub process:   succeedNumberOfActivePubProcess=0  failedNumberOfActivePubProcess=0
+2017-02-24T05:15:01.056+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---  Single pub process statistic:   average=0    max=-9223372036854775808    min=9223372036854775807
+2017-02-24T05:15:01.056+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ---          TotalCostTime:   0 million seconds
+2017-02-24T05:15:01.056+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ==============  Active Nixle Publication Process Result  ==============
+2017-02-24T05:15:01.056+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- ------- All the publications (0) processed well. ---------------
+2017-02-24T05:15:01.056+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.model.NixleSchedulerReportData:47)- -------------------------------------------------------------------------
+
+2017-02-24T06:03:21.475+08:00 INFO (org.eclipse.jetty.server.Server:253)- jetty-8.0.4.v20111024
+2017-02-24T06:03:21.971+08:00 INFO (org.eclipse.jetty.webapp.StandardDescriptorProcessor:262)- NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2017-02-24T06:03:22.064+08:00 INFO (org.eclipse.jetty.server.handler.ContextHandler:673)- started o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+2017-02-24T06:03:22.065+08:00 INFO (org.eclipse.jetty.server.handler.ContextHandler:673)- started o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+2017-02-24T06:03:22.082+08:00 INFO (/:1831)- Initializing Spring root WebApplicationContext
+2017-02-24T06:03:24.005+08:00 INFO (com.everbridge.platform.common.config.SystemPropertyPlaceholderConfigurer:172)- Loading properties file from URL [file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/nixle.properties]
+2017-02-24T06:03:24.186+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:79)- filterDataSource init 
+2017-02-24T06:03:25.331+08:00 WARN (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:181)- allMongoDataSourceList is null 
+2017-02-24T06:03:25.340+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017filestore
+2017-02-24T06:03:25.344+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017coredb
+2017-02-24T06:03:25.348+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:198)- put allGlobalMongoTemplateMap, with key: 127.0.0.127017ssp0
+2017-02-24T06:03:25.366+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.system.model.CollectionMapping,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@1f38957
+2017-02-24T06:03:25.366+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T06:03:25.366+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017coredb, className: com.everbridge.platform.system.model.CollectionMapping
+2017-02-24T06:03:25.878+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- ===== NixleAlertFeedServiceImpl instance.
+2017-02-24T06:03:26.130+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.nixle.model.NixlePullerSetting,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e47a03
+2017-02-24T06:03:26.133+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T06:03:26.133+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017ssp0, className: com.everbridge.platform.nixle.model.NixlePullerSetting
+2017-02-24T06:03:26.518+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.filestore.model.AbstractResource,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@5e7c141d
+2017-02-24T06:03:26.518+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T06:03:26.519+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017filestore, className: com.everbridge.platform.filestore.model.AbstractResource
+2017-02-24T06:03:26.888+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.notification.model.Notification,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@64db4967
+2017-02-24T06:03:26.890+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T06:03:26.890+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017coredb, className: com.everbridge.platform.notification.model.Notification
+2017-02-24T06:03:26.930+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.alert.model.AlertFeed,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e47a03
+2017-02-24T06:03:26.931+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T06:03:26.931+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017ssp0, className: com.everbridge.platform.alert.model.AlertFeed
+2017-02-24T06:03:26.956+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.nixle.model.NixlePublicationBaseInfo,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@3e47a03
+2017-02-24T06:03:26.956+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T06:03:26.957+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017ssp0, className: com.everbridge.platform.nixle.model.NixlePublicationBaseInfo
+2017-02-24T06:03:26.960+08:00 INFO (com.everbridge.platform.nixle.safetyawareness.service.NixleAlertFeedServiceImpl:47)- execute postConstruct() in NixleAlertFeedServiceImpl ...
+2017-02-24T06:03:26.976+08:00 INFO (org.apache.curator.framework.imps.CuratorFrameworkImpl:238)- Starting
+2017-02-24T06:03:27.905+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2017-02-24T06:03:27.906+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:host.name=admin-p
+2017-02-24T06:03:27.907+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.version=1.8.0_91
+2017-02-24T06:03:27.907+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.vendor=Oracle Corporation
+2017-02-24T06:03:27.908+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.home=C:\Program Files\Java\jdk1.8.0_91\jre
+2017-02-24T06:03:27.908+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.class.path=C:\Users\George\AppData\Local\Temp\classpath23035.jar
+2017-02-24T06:03:27.908+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_91\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;D:\everbridge\scripts;D:\devTools\MongoDB\Server\3.2\bin;D:\devTools\apache-maven-3.3.9\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files (x86)\PuTTY\;D:\devTools\sbt-0.13.11\bin;C:\Program Files\CloudFoundry;D:\Program Files\TortoiseHg\;D:\devTools\nodejs\;D:\devTools\jad;D:\Program Files\OpenVPN\bin;D:\Program Files\Oracle\VirtualBox;D:\HashiCorp\Vagrant\bin;D:\devTools\filebeat-5.1.2-windows-x86_64;C:\Users\George\AppData\Local\Microsoft\WindowsApps;C:\Users\George\AppData\Roaming\npm;C:\Program Files\Oracle\VirtualBox;D:\devTools\DockerToolbox;.
+2017-02-24T06:03:27.908+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.io.tmpdir=C:\Users\George\AppData\Local\Temp\
+2017-02-24T06:03:27.909+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:java.compiler=<NA>
+2017-02-24T06:03:27.909+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:os.name=Windows 10
+2017-02-24T06:03:27.909+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:os.arch=amd64
+2017-02-24T06:03:27.910+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:os.version=10.0
+2017-02-24T06:03:27.910+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:user.name=George
+2017-02-24T06:03:27.910+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:user.home=C:\Users\George
+2017-02-24T06:03:27.910+08:00 INFO (org.apache.zookeeper.ZooKeeper:100)- Client environment:user.dir=D:\everbridge\projects\omniplatform
+2017-02-24T06:03:27.914+08:00 INFO (org.apache.zookeeper.ZooKeeper:438)- Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@2264ea32
+2017-02-24T06:03:27.947+08:00 INFO (com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl:47)- regist server to zookeeper, basePath: /nixle/safetyawareness/pubPullerScheduler/leader, serverId: admin-p
+2017-02-24T06:03:27.951+08:00 INFO (org.apache.zookeeper.ClientCnxn:975)- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-02-24T06:03:27.953+08:00 INFO (org.apache.zookeeper.ClientCnxn:852)- Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2017-02-24T06:03:27.967+08:00 WARN (org.apache.zookeeper.ClientCnxnSocket:139)- Connected to an old server; r-o mode will be unavailable
+2017-02-24T06:03:27.968+08:00 INFO (org.apache.zookeeper.ClientCnxn:1235)- Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x15a4b187c09000d, negotiated timeout = 40000
+2017-02-24T06:03:27.977+08:00 INFO (org.apache.curator.framework.state.ConnectionStateManager:228)- State change: CONNECTED
+2017-02-24T06:03:29.038+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:94)- className=com.everbridge.platform.datasource.model.MongoDataSource,mongoTemplate=org.springframework.data.mongodb.core.MongoTemplate@64db4967
+2017-02-24T06:03:29.038+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:248)- isReplaceSpringMongo: true
+2017-02-24T06:03:29.038+08:00 INFO (com.everbridge.platform.framework.persistence.dao.mongo.FilterDataSoure:105)- found key in allGlobalMongoTemplateMap, key: 127.0.0.127017coredb, className: com.everbridge.platform.datasource.model.MongoDataSource
+2017-02-24T06:03:29.203+08:00 ERROR (com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl:31)- Error occured when getPathData:org.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /nixle/safetyawareness/pubPullerScheduler/leader\leaders\_c_c9ecc59c-06df-473f-8a7e-e2d624d7823c-latch-0000000840
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:111)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:1155)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl$4.call(GetDataBuilderImpl.java:302)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl$4.call(GetDataBuilderImpl.java:291)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.pathInForeground(GetDataBuilderImpl.java:287)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.forPath(GetDataBuilderImpl.java:279)
+	at org.apache.curator.framework.imps.GetDataBuilderImpl.forPath(GetDataBuilderImpl.java:41)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.getPathData(ClusterCoordinateServiceImpl.java:307)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.listAliveServerIds(ClusterCoordinateServiceImpl.java:198)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl.listServersOfCluster(ClusterCoordinateServiceImpl.java:174)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCallbackServiceImpl.onAddServer(ClusterCallbackServiceImpl.java:28)
+	at com.everbridge.platform.framework.cluster.impl.ClusterCoordinateServiceImpl$2.childEvent(ClusterCoordinateServiceImpl.java:380)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$5.apply(PathChildrenCache.java:516)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$5.apply(PathChildrenCache.java:510)
+	at org.apache.curator.framework.listen.ListenerContainer$1.run(ListenerContainer.java:92)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutorService.execute(MoreExecutors.java:299)
+	at org.apache.curator.framework.listen.ListenerContainer.forEach(ListenerContainer.java:83)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache.callListeners(PathChildrenCache.java:507)
+	at org.apache.curator.framework.recipes.cache.EventOperation.invoke(EventOperation.java:35)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$9.run(PathChildrenCache.java:759)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-02-24T06:03:29.369+08:00 INFO (org.hibernate.validator.internal.util.Version:30)- HV000001: Hibernate Validator 5.2.4.Final
+2017-02-24T06:03:29.635+08:00 INFO (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:165)- Initializing ExecutorService  'nixlePullerPoolThreadExecutor'
+2017-02-24T06:03:29.670+08:00 INFO (org.eclipse.jetty.server.handler.ContextHandler:673)- started o.e.j.w.WebAppContext{/,file:/D:/everbridge/projects/omniplatform/platform-nixle/target/classes/webapp/}
+2017-02-24T06:03:29.798+08:00 INFO (/:1831)- Initializing Spring FrameworkServlet 'springServlet'
+2017-02-24T06:03:30.870+08:00 INFO (org.eclipse.jetty.server.AbstractConnector:320)- Started SelectChannelConnector@0.0.0.0:9089 STARTING
+2017-02-24T06:03:30.878+08:00 INFO (com.everbridge.platform.nixle.NixleServiceAppMain:47)- Server started successfully on port 9089 at Fri Feb 24 18:03:30 CST 2017.
