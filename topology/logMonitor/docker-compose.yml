@@ -61,6 +61,7 @@ services:
       - logstash:logstash
     volumes:
       - ./filebeat/config/filebeat.yml:/filebeat.yml
+      - ./filebeat/data:/data
       - ./tutorialLog:/serverlogs
     entrypoint:
       - filebeat
