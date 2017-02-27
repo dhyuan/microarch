@@ -36,7 +36,7 @@ xpack.security.enabled: true
 #
 # Path to log files:
 #
-#path.logs: /path/to/logs
+path.logs: /var/logs
 #
 # ----------------------------------- Memory -----------------------------------
 #
