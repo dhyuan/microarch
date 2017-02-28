@@ -22,6 +22,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <scala.main.version>2.12</scala.main.version>
         <scala.version>2.12.0</scala.version>
 
         <spring-boot-starter.version>1.4.2.RELEASE</spring-boot-starter.version>
@@ -149,6 +150,13 @@
                 <artifactId>scala-compiler</artifactId>
                 <version>${scala.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.sksamuel.elastic4s</groupId>
+                <artifactId>elastic4s-core_${scala.main.version}</artifactId>
+                <version>5.2.9</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
