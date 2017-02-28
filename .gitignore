@@ -3,6 +3,7 @@
 *.jar
 *.zip
 *.log
+microarch.iml
 
 *.mp4
 *.dmg
@@ -22,3 +23,8 @@ Thumbs.db
 *.iws
 out
 topology/devEnv/.vagrant
+elasticsearch/data/
+elasticsearch/log/
+filebeat/data/
+kibana/data/
+
