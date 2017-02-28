@@ -1,0 +1,110 @@
+[
+  {
+    "_id": "ad6e1e70-fd8d-11e6-bafb-c5b8b85d4af4",
+    "_type": "dashboard",
+    "_source": {
+      "title": "ErrorLog Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"e2a6d4f0-fd89-11e6-872e-8159571c5a62\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"8bb415f0-fd8d-11e6-bafb-c5b8b85d4af4\",\"panelIndex\":3,\"row\":3,\"size_x\":12,\"size_y\":6,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-3\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now/d",
+      "timeFrom": "now/d",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"query\",\"negate\":false,\"value\":\"{}\"},\"query\":{}},{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "35432360-fd8c-11e6-99af-a993245c72e6",
+    "_type": "search",
+    "_source": {
+      "title": "ErrorsInLog",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"logLevel:ERROR\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "6b274600-fd91-11e6-93ec-215564b8bf2e",
+    "_type": "search",
+    "_source": {
+      "title": "queryErrorLogs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "appMsg"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"query\",\"negate\":false,\"value\":\"{}\"},\"query\":{}},{\"meta\":{\"negate\":false,\"index\":\"logstash-*\",\"key\":\"logLevel\",\"value\":\"ERROR\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"logLevel\":{\"query\":\"ERROR\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "e2a6d4f0-fd89-11e6-872e-8159571c5a62",
+    "_type": "visualization",
+    "_source": {
+      "title": "ErrorWarnOfLog",
+      "visState": "{\"title\":\"ErrorWarnOfLog\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"logLevel.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "8bb415f0-fd8d-11e6-bafb-c5b8b85d4af4",
+    "_type": "visualization",
+    "_source": {
+      "title": "ErrorWithClass",
+      "visState": "{\"title\":\"ErrorWithClass\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"class.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"appMsg.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "35432360-fd8c-11e6-99af-a993245c72e6",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"query\",\"negate\":false,\"value\":\"{}\"},\"query\":{}},{\"meta\":{\"index\":\"logstash-*\",\"key\":\"appMsg.keyword\",\"value\":\"Context initialization failed\",\"disabled\":true,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"appMsg.keyword\":{\"query\":\"Context initialization failed\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"logstash-*\",\"key\":\"class.keyword\",\"value\":\"org.springframework.web.context.ContextLoader\",\"disabled\":true,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"class.keyword\":{\"query\":\"org.springframework.web.context.ContextLoader\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "910a29f0-fd8c-11e6-bafb-c5b8b85d4af4",
+    "_type": "visualization",
+    "_source": {
+      "title": "ErrorLogTable",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customLabel\":\"LogInfo\",\"field\":\"appMsg.keyword\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":5},\"schema\":\"bucket\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"title\":\"ErrorLogTable\",\"type\":\"table\"}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":0,\"direction\":\"asc\"}}}}",
+      "description": "",
+      "savedSearchId": "35432360-fd8c-11e6-99af-a993245c72e6",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"query\",\"negate\":false,\"value\":\"{}\"},\"query\":{}}]}"
+      }
+    }
+  }
+]
