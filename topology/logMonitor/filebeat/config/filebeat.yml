@@ -71,6 +71,43 @@ filebeat.prospectors:
     negate: false
     match: after
 
+
+- input_type: log
+  paths:
+    - /serverlogs/applog/catalina.out
+    - /serverlogs/applog/server1/catalina.out
+  fields:
+    type: portalLog
+  tags: ["portal"]
+  multiline:
+    pattern: '^[[:space:]]+|^Caused by:'
+    negate: false
+    match: after
+
+
+- input_type: log
+  paths:
+    - /serverlogs/applog/localPortal/portal.log.none
+  fields:
+    type: localPortalLog
+  tags: ["localPortal"]
+  multiline:
+    pattern: '^[[:space:]]+|^Caused by:'
+    negate: false
+    match: after
+
+
+- input_type: log
+  paths:
+    - /serverlogs/applog/mongo/mongo.log.none
+  fields:
+    type: mongoLog
+  tags: ["mongo"]
+  multiline:
+    pattern: '^[[:space:]]+|^Caused by:'
+    negate: false
+    match: after
+
 #================================ General =====================================
 
 # The name of the shipper that publishes the network data. It can be used to group
