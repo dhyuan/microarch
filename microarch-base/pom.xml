@@ -34,12 +34,22 @@
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-client</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
-    <!--<build>-->
-        <!--<plugins>-->
-
-        <!--</plugins>-->
-    <!--</build>-->
 
 </project>
