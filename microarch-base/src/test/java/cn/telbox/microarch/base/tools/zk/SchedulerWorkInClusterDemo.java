@@ -1,6 +1,5 @@
-package cn.telbox.microarch.base.tools;
+package cn.telbox.microarch.base.tools.zk;
 
-import cn.telbox.microarch.base.tools.zk.AbstractSingletonServiceBasedOnZK;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
