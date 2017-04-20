@@ -1,15 +1,13 @@
 package cn.telbox.microarch.base.tools;
 
+import cn.telbox.microarch.base.tools.zk.AbstractSingletonServiceBasedOnZK;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 
 import javax.annotation.PostConstruct;
-import java.io.IOException;
 import java.util.Optional;
 import java.util.function.Function;
 

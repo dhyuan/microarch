@@ -1,0 +1,63 @@
+ubuntu-14.04-x86_64
+
+ssh: 26809
+
+# Create dev group and user.
+groupadd -g 1002 dev
+
+useradd  dahui -g 1002 -s /bin/bash
+
+passwd dahui
+
+mkdir /home/dahui
+chown dahui:dev /home/dahui
+
+chmod +w /etc/sudoers
+sudo vim /etc/sudoers
+chmod -w /etc/sudoers
+
+# Install ansible
+sudo apt-get update
+sudo apt-get install -y software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get install -y --force-yes ansible
+
+# install shadowsocks as root user
+vi /etc/apt/sources.list
+deb http://shadowsocks.org/ubuntu trust main restricted universe
+
+
+sudo apt-get install python-pip
+sudo pip install shadowsocks
+
+sudo ssserver -p 1973 -k password -m aes-256-cfb -d start
+
+vi /etc/shadowsocks.json
+{
+ "server":"23.83.234.150"，
+ "local_address": "127.0.0.1",
+ "local_port":1080,
+ "port_password": { "1973": "password" },
+ "timeout":300,
+ "method":"aes-256-cfb",
+ "fast_open": false
+}
+
+ssserver -c /etc/shadowsocks.json -d start
+
+vi /etc/rc.local
+ssserver -c /etc/shadowsocks.json -d start
+
+
+# Install FTP server
+sudo apt-get install vsftpd
+sudo vi /etc/vsftpd.conf
+sudo vi /etc/vsftpd.chroot_list
+
+sudo service vsftpd restart
+
+
+
+
+
+

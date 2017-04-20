@@ -28,3 +28,4 @@ elasticsearch/log/
 filebeat/data/
 kibana/data/
 
+nixle.log

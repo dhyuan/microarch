@@ -13,7 +13,7 @@
     <artifactId>microarch-base</artifactId>
 
     <properties>
-        <start-class>cn.telbox.microarch.base.tools.DemoApp</start-class>
+        <start-class>cn.telbox.microarch.base.tools.zk.DemoApp</start-class>
     </properties>
 
     <dependencies>
