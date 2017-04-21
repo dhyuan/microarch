@@ -1,15 +1,14 @@
 package cn.telbox.microarch.base.tools.validation;
 
 import com.google.common.collect.Lists;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.validation.BindException;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
-import org.springframework.validation.Validator;
+import org.springframework.validation.*;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import java.util.List;
@@ -20,6 +19,7 @@ import java.util.List;
 
 @SpringBootApplication
 public class DemoValidationByAPI {
+    private static final Logger logger = LoggerFactory.getLogger(DemoValidationByAPI.class);
 
     @Bean
     Validator validator() {
@@ -41,13 +41,21 @@ public class DemoValidationByAPI {
             user.setAddresses(Lists.newArrayList(addr0, addr1));
             user.setAge(-9);
             user.setLoginId("u1");
+            user.setNickName("dolphin");
 
             BindingResult result = new BindException(user, "user");
 
             validator.validate(user, result);
 
             final List<ObjectError> allErrors = result.getAllErrors();
-            System.out.println(allErrors);
+            allErrors.stream().forEach(e -> {
+                if (e instanceof FieldError) {
+                    final FieldError fe = (FieldError) e;
+                    logger.warn(fe.getCode() + "." + fe.getObjectName() + "." + fe.getField() + "  ---> " + fe.getRejectedValue());
+                }else {
+                    logger.warn(e.toString());
+                }
+            });
         };
     }
 

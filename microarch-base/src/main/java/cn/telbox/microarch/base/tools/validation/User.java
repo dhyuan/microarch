@@ -1,8 +1,8 @@
 package cn.telbox.microarch.base.tools.validation;
 
+import cn.telbox.microarch.base.tools.validation.annotation.StringValueOptions;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
 
@@ -34,5 +34,9 @@ public class User {
 
     @Valid
     private List<Address> addresses;
+
+    @StringValueOptions(options = "dog, cat")
+    private String nickName;
+
 
 }
