@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by dahui on 20/04/2017.
@@ -15,9 +17,9 @@ import javax.validation.constraints.Max;
 @NoArgsConstructor
 public class Address {
 
-    @Max(20)
+    @Min(2) @Max(20)
     private String city;
 
-
+    @NotNull
     private String street;
 }
